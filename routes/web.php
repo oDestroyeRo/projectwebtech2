@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 // $ composer require guzzlehttp/guzzle:~6.0
 
-Route::get('singers', 'SingersController@index');
-Route::get('singers/create', 'SingersController@create');
-Route::get('singers/{id}', 'SingersController@show');
+// Route::get('singers', 'SingersController@index');
+// Route::get('singers/create', 'SingersController@create');
+// Route::get('singers/{id}', 'SingersController@show');
 
 Auth::routes();
 
