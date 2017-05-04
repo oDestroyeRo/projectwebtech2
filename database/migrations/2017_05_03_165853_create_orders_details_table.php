@@ -20,7 +20,7 @@ class CreateOrdersDetailsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('order_id')->references('order_id')->on('orders');
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
