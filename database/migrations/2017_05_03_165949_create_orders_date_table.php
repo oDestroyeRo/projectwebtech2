@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSingersTable extends Migration
+class CreateOrdersDateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSingersTable extends Migration
      */
     public function up()
     {
-        Schema::create('singers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        Schema::create('orders_date', function (Blueprint $table) {
+            $table->string('order_id');
+            $table->string('date');
             $table->timestamps();
             $table->softDeletes();
+            $table->foreign('order_id')->references('order_id')->on('orders');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateSingersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('singers');
+        Schema::dropIfExists('orders_date');
     }
 }
