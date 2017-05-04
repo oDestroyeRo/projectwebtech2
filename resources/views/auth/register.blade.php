@@ -9,16 +9,37 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                        <div class="form-group">
+                            <label for="id" class="col-md-4 control-label">ID</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                  <label for="id" class="col-md-4 control-label"><?php  $id = \App\user::max('id'); echo $id+1; ?></label>
+                            </div>
+                        </div>
 
-                                @if ($errors->has('name'))
+                        <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                            <label for="firstname" class="col-md-4 control-label">Firstname</label>
+
+                            <div class="col-md-6">
+                                <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
+
+                                @if ($errors->has('firstname'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                            <label for="lastname" class="col-md-4 control-label">Lastname</label>
+
+                            <div class="col-md-6">
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required autofocus>
+
+                                @if ($errors->has('lastname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastname') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -38,7 +59,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('Address') ? ' has-error' : '' }}">
+                        <!-- <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                             <label for="address" class="col-md-4 control-label">Address</label>
 
                             <div class="col-md-6">
@@ -50,19 +71,31 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group{{ $errors->has('Phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">Phone</label>
+                        <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
+                            <label for="tel" class="col-md-4 control-label">Tel</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
+                                <input id="tel" type="tel" class="form-control" name="tel" value="{{ old('tel') }}" required autofocus>
 
-                                @if ($errors->has('phone'))
+                                @if ($errors->has('tel'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
+                                        <strong>{{ $errors->first('tel') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="role" class="col-md-4 control-label">Role</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="role" name="role">
+                                    <option value="customer">Customer</option>
+                                    <option value="admin">Admin</option>
+                                </select>
                             </div>
                         </div>
 
