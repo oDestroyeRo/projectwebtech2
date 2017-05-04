@@ -16,8 +16,7 @@ class DatabaseSeeder extends Seeder
         // Users
 
         App\User::create([
-          'user_id' => '1234',
-          'username' => 'admin',
+          'id' => '1234',
           'email' => 'admin@gmail.com',
           'password' => '1111',
           'firstname' => 'adad',
@@ -29,8 +28,7 @@ class DatabaseSeeder extends Seeder
           'role' => 'admin'
         ]);
         App\User::create([
-          'user_id' => '2525',
-          'username' => 'pizza',
+          'id' => '2525',
           'email' => 'pizza@gmail.com',
           'password' => '0000',
           'firstname' => 'pizza',
@@ -42,8 +40,7 @@ class DatabaseSeeder extends Seeder
           'role' => 'customer'
         ]);
         App\User::create([
-          'user_id' => '3434',
-          'username' => 'mymy',
+          'id' => '3434',
           'email' => 'mymy@gmail.com',
           'password' => '2222',
           'firstname' => 'mymy',
