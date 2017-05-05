@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Layout Page</title>
+    <title>Title Page</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-     <link href="css/layout.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -15,8 +14,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<<<<<<< HEAD:resources/views/layout.blade.php
-=======
   <style>
   body {
       font: 400 15px Lato, sans-serif;
@@ -149,7 +146,6 @@
       color: #fff !important;
   }
   </style>
->>>>>>> dev_customer:resources/views/customer.blade.php
 
   </head>
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -165,12 +161,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="layout/menu">MENU</a></li>
-        <li><a href="#services">PROMOTION</a></li>
-        <li><a href="#portfolio">GIFT VOUCHER</a></li>
-        <li><a href="#portfolio">POINT</a></li>
-        <li><a href="#pricing">PROFILE</a></li>
-        <li><a href="#contact">ORDER</a></li>
+        <li><a href="customer/menu">MENU</a></li>
+        <li><a href="customer/promotion">PROMOTION</a></li>
+        <li><a href="customer/giftvoucher">GIFT VOUCHER</a></li>
+        <li><a href="customer/point">POINT</a></li>
+        <li><a href="customer/profile">PROFILE</a></li>
+        <li><a href="customer/order">ORDER</a></li>
       </ul>
     </div>
   </div>
