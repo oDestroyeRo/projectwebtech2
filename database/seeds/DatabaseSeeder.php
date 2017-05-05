@@ -60,31 +60,31 @@ class DatabaseSeeder extends Seeder
 
         App\Product::create([
           'product_id' => '0001',
-          'product_img' => 'img/1',
+          'product_img' => 'img/1.png',
           'product_name' => 'espresso',
           'product_price' => '25'
         ]);
         App\Product::create([
           'product_id' => '0002',
-          'product_img' => 'img/2',
+          'product_img' => 'img/2.png',
           'product_name' => 'greentea',
           'product_price' => '20'
         ]);
         App\Product::create([
           'product_id' => '0003',
-          'product_img' => 'img/3',
+          'product_img' => 'img/3.png',
           'product_name' => 'chocolate',
           'product_price' => '20'
         ]);
         App\Product::create([
           'product_id' => '0004',
-          'product_img' => 'img/4',
+          'product_img' => 'img/4.png',
           'product_name' => 'latte',
           'product_price' => '25'
         ]);
         App\Product::create([
           'product_id' => '0005',
-          'product_img' => 'img/5',
+          'product_img' => 'img/5.png',
           'product_name' => 'caramel macchiato',
           'product_price' => '30'
         ]);
