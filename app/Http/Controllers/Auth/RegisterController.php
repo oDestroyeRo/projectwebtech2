@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             //'password' => 'required|min:6|confirmed',
             // 'address' => 'required|max:255',
-            'tel' => 'required|size:10',
+            'tel' => 'required|digits:10',
         ]);
     }
 
