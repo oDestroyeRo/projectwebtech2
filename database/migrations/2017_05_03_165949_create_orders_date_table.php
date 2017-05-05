@@ -14,7 +14,7 @@ class CreateOrdersDateTable extends Migration
     public function up()
     {
         Schema::create('orders_date', function (Blueprint $table) {
-            $table->string('order_id');
+            $table->string('order_id')->primary();
             $table->string('date');
             $table->timestamps();
             $table->softDeletes();

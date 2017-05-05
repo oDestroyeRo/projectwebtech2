@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         App\User::create([
           'id' => '1234',
           'email' => 'admin@gmail.com',
-          'password' => '1111',
+          'password' => bcrypt('1111'),
           'firstname' => 'adad',
           'lastname' => 'dada',
           'tel' => '0899999999',
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         App\User::create([
           'id' => '2525',
           'email' => 'pizza@gmail.com',
-          'password' => '0000',
+          'password' => bcrypt('0000'),
           'firstname' => 'pizza',
           'lastname' => 'duzz',
           'tel' => '0801231234',
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         App\User::create([
           'id' => '3434',
           'email' => 'mymy@gmail.com',
-          'password' => '2222',
+          'password' => bcrypt('2222'),
           'firstname' => 'mymy',
           'lastname' => 'ymym',
           'tel' => '0855555555',
