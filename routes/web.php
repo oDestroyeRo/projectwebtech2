@@ -25,6 +25,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/layout', function () {
+Route::get('/customer', function () {
     return view('layout');
+});
+Route::get('/customer/menu', function () {
+    return view('menu');
+});
+Route::get('/customer/order', function () {
+    return view('order');
+});
+Route::get('/customer/giftvoucher', function () {
+    return view('giftvoucher');
+});
+Route::get('/customer/point', function () {
+    return view('point');
+});
+Route::get('/customer/profile', function () {
+    return view('profile');
+});
+Route::get('/customer/promotion', function () {
+    return view('promotion');
 });
