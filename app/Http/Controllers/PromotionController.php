@@ -22,4 +22,40 @@ class PromotionController extends Controller
       $promotion = DB::table('promotions')->get();
       return view('promotion', ['promotion' => $promotion]);
     }
+
+    public function allRecord(){
+      $promotions = DB::table('promotions')->paginate(1);
+      return view('admin.promotion.index',['promotions' => $promotions]);
+    }
+
+
+    public function insert(Request $request)
+  {
+    $filename = $request->file('promotionImg')->getClientOriginalName();
+
+    $promotions = new Promotion([
+      'promotion_img' => 'img/'.''.$filename,
+      'description' => $request->promotionDes,
+      'discount' => $request->promotionDis
+    ]);
+    $promotions -> save();
+
+    $request->promotionImg->move(public_path('img'), $filename);
+
+    $promotions = DB::table('promotions')->paginate(2);
+    return view('admin.promotion.index',['promotions' => $promotions]);
+  }
+
+
+  public function edit($id)
+  {
+    return 'edit'.' '.$id;
+  }
+
+
+  public function delete($id)
+  {
+    Promotion::where('promotion_id', '=', $id)->delete();
+    return 'delete'.' '.$id;
+  }
 }
