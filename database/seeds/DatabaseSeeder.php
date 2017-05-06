@@ -125,17 +125,17 @@ class DatabaseSeeder extends Seeder
         // Vouchers
 
         App\Voucher::create([
-          'voucher_id' => '000001',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '15',
           'voucher_price' => '30'
         ]);
         App\Voucher::create([
-          'voucher_id' => '000002',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '25',
           'voucher_price' => '50'
         ]);
         App\Voucher::create([
-          'voucher_id' => '000003',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '35',
           'voucher_price' => '70'
         ]);
