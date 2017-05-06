@@ -50,3 +50,8 @@ Route::get('/customer/profile', function () {
     return view('profile');
 });
 Route::get('/customer/promotion', 'PromotionController@show');
+
+Route::get('/promotion', 'PromotionController@allRecord');
+Route::post('/promotion/insert', 'PromotionController@insert');
+Route::get('promotion/edit/{id}','PromotionController@edit');
+Route::get('/promotion/delete/{id}','PromotionController@delete');

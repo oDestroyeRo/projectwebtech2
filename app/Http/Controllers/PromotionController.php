@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 // use App\Products;
 use Illuminate\Support\Facades\DB;
+use App\Promotion;
 
 class PromotionController extends Controller
 {
@@ -31,9 +32,13 @@ class PromotionController extends Controller
 
     public function insert(Request $request)
   {
+    $promotion_id = Promotion::max('promotion_id');
+    $promotion_id += 1 ;
+
     $filename = $request->file('promotionImg')->getClientOriginalName();
 
     $promotions = new Promotion([
+      'promotion_id' => $promotion_id,
       'promotion_img' => 'img/'.''.$filename,
       'description' => $request->promotionDes,
       'discount' => $request->promotionDis
