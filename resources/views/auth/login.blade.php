@@ -60,26 +60,10 @@
                         <a class="nav-link text-uppercase text-expanded" href="/index">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Menu</a>
+                        <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Register</a>
                     </li>
                     <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/promotion">PROMOTION</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/giftvoucher">GIFT VOUCHER</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/point">POINT</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/profile">PROFILE</a>
-                    </li>
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/customer/order">ORDER</a>
-                    </li>    
-                    <li class="nav-item px-lg-4">
-                        <a class="nav-link text-uppercase text-expanded" href="/login">LOGIN</a>
-                    </li>                   
+                  
                 </ul>
             </div>
         </div>
