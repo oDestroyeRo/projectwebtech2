@@ -41,9 +41,8 @@ Route::get('/customer/menu', 'MenuController@show');
 Route::get('/customer/order', function () {
     return view('order');
 });
-Route::get('/customer/giftvoucher', function () {
-    return view('giftvoucher');
-});
+Route::get('/customer/giftvoucher', 'GiftVoucherController@show');
+
 Route::get('/customer/point', function () {
     return view('point');
 });
