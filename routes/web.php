@@ -11,9 +11,14 @@
 |
 */
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 // $ composer require guzzlehttp/guzzle:~6.0
 
