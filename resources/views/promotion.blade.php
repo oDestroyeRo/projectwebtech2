@@ -17,11 +17,12 @@
       <div class="col-xs-6 col-md-6 ">
         <!-- <a href="#" class="thumbnail"> -->
           <center> <img src="/{{ $p->promotion_img}}" alt="Sample Image"> </center>
+          <br>
           <center> <p> {{$p->description}} </p> </center>
 
         <!-- </a> -->
       </div>
-      
+
     </div>
       @endforeach
 @endsection
