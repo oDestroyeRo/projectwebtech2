@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
 
         App\Product::create([
           'product_id' => '0001',
-          'product_img' => 'img/1.png',
+          'product_img' => 'img/1-1.png',
           'product_name' => 'espresso',
           'product_price' => '25'
         ]);
