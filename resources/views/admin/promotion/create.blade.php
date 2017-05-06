@@ -16,27 +16,27 @@
             <form class="form-horizontal" method="post" action="/promotion/insert"  enctype="multipart/form-data">
               {{ csrf_field() }}
               <div class="form-group">
-                <label for="id" class="col-md-3 control-label">ID</label>
+                <label class="col-md-3 control-label">ID</label>
                 <div class="col-md-8">
-                  <label for="id" class="form-control"><?php  $promotion_id = \App\Promotion::max('promotion_id'); echo $promotion_id+1; ?></label>
+                  <label class="form-control"><?php  $promotion_id = \App\Promotion::max('promotion_id'); echo $promotion_id+1; ?></label>
                 </div>
               </div>
               <div class="form-group">
-                <label for="img" class="col-md-3 control-label">BROWSE</label>
+                <label for="promotionImg" class="col-md-3 control-label">BROWSE</label>
                 <div class="col-md-8">
-                  <input for="img" type="file" class="form-control" name="promotionImg" id="promotionImg" placeholder="img">
+                  <input type="file" class="form-control" name="promotionImg" id="promotionImg" placeholder="img" required autofocus>
                 </div>
               </div>
               <div class="form-group">
-                <label for="description" class="col-md-3 control-label">DESCRIPTION</label>
+                <label for="promotionDes" class="col-md-3 control-label">DESCRIPTION</label>
                 <div class="col-md-8">
-                  <input for="description" type="text" class="form-control" name="promotionDes" id="promotionDes" placeholder="Description">
+                  <input type="text" class="form-control" name="promotionDes" id="promotionDes" placeholder="Description" required autofocus>
                 </div>
               </div>
               <div class="form-group">
-                <label for="discount" class="col-md-3 control-label">DISCOUNT</label>
+                <label for="promotionDis" class="col-md-3 control-label">DISCOUNT</label>
                 <div class="col-md-8">
-                  <input for="discount" type="text" class="form-control" name="promotionDis" id="promotionDis" placeholder="Discount">
+                  <input type="text" class="form-control" name="promotionDis" id="promotionDis" placeholder="Discount" required autofocus>
                 </div>
               </div>
               <div class="modal-footer">
