@@ -24,6 +24,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('product', 'ProductController@index');
+Route::get('product/create', 'ProductController@create');
+Route::get('product/{id}', 'ProductController@edit');
 
 Route::get('/customer', function () {
     return view('customer');
