@@ -11,9 +11,10 @@
                   @foreach ($data as $d)
                   <div class="col-xs-6 col-md-3">
                     <div  class="thumbnail">
+                      <h3>{{$d->product_name}}</h3>
                       <img src='{{ $d->product_img }}' alt="Sample Image">
                       <a class="btn btn-info btn-sm"  > Edit</a>
-                      <a  class="btn btn-danger btn-sm" > Delete</a>
+                      <a class="btn btn-danger btn-sm" > Delete</a>
                     </div>
                   </div>
                   @endforeach
