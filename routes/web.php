@@ -37,6 +37,7 @@ Route::get('/customer', function () {
     return view('customer');
 });
 Route::get('/customer/menu', 'MenuController@show');
+
 Route::get('/customer/order', function () {
     return view('order');
 });
@@ -49,6 +50,4 @@ Route::get('/customer/point', function () {
 Route::get('/customer/profile', function () {
     return view('profile');
 });
-Route::get('/customer/promotion', function () {
-    return view('promotion');
-});
+Route::get('/customer/promotion', 'PromotionController@show');

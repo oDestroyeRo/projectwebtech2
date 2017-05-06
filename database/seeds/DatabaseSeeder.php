@@ -149,7 +149,7 @@ class DatabaseSeeder extends Seeder
 
         // Orders
 
-        
+
 
         // Order_details
 
