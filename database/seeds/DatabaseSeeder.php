@@ -121,6 +121,12 @@ class DatabaseSeeder extends Seeder
 
         // Promotions
 
+        App\Promotion::create([
+          'promotion_id' => 'p01',
+          'promotion_img' => 'img/pro1.jpg',
+          'description' => 'ซื้อหนึ่งแก้ว แก้วที่สองลด 50%',
+          'discount' => '50'
+        ]);
 
         // Vouchers
 
