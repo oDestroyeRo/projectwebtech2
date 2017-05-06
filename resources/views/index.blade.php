@@ -89,80 +89,61 @@
 
         <div class="bg-faded p-4 my-4">
             <!-- Image Carousel -->
-<!--  -->
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid w-100" src="img/slide-1.jpg" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-shadow">First Slide</h3>
+                            <p class="text-shadow">This is the caption for the first slide.</p>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid w-100" src="img/slide-2.jpg" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-shadow">Second Slide</h3>
+                            <p class="text-shadow">This is the caption for the second slide.</p>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid w-100" src="img/slide-3.jpg" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-shadow">Third Slide</h3>
+                            <p class="text-shadow">This is the caption for the third slide.</p>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
             <!-- Welcome Message -->
+            <div class="text-center mt-4">
+                <div class="text-heading text-muted text-lg">Welcome To</div>
+                <h1 class="my-2">KK Coffee</h1>
+<!--                 <div class="text-heading text-muted text-lg">By <strong>Start Bootstrap</strong></div> -->
+            </div>
         </div>
 
- 
+
+        <div class="bg-faded p-4 my-4">
+            <hr class="divider">
+            <h2 class="text-center text-lg text-uppercase my-0">Beautiful boxes to <strong>showcase your content</strong></h2>
+            <hr class="divider">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam soluta dolore voluptatem, deleniti dignissimos excepturi veritatis cum hic sunt perferendis ipsum perspiciatis nam officiis sequi atque enim ut! Velit, consectetur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam pariatur perspiciatis reprehenderit illo et vitae iste provident debitis quos corporis saepe deserunt ad, officia, minima natus molestias assumenda nisi velit?</p>
+        </div>
+
     </div>
     <!-- /.container -->
 
@@ -180,4 +161,3 @@
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 </html>
-
