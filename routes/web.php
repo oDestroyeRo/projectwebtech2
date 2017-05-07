@@ -24,28 +24,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('product', 'ProductController@index');
-Route::get('product/create', 'ProductController@create');
-Route::get('product/{id}', 'ProductController@edit');
+// Route::get('product', 'Admin\ProductController@index');
+Route::get('product/create', 'Admin\ProductController@create')->name('product.create');
+Route::get('product/{id}/edit', 'Admin\ProductController@edit')->name('product.edit');
+Route::post('product', 'Admin\ProductController@store')->name('product.store');
+//
+// Route::post('product/{id}', 'Admin\ProductController@destroy');
+Route::get('product', 'Admin\ProductController@index')->name('product');
+Route::get('product/{id}/destroy', 'Admin\ProductController@destroy')->name('product.destroy');
 
-Route::get('/customer', function () {
-    return view('customer');
-});
-Route::get('/customer/menu', function () {
-    return view('menu');
-});
-Route::get('/customer/order', function () {
-    return view('order');
-});
-Route::get('/customer/giftvoucher', function () {
-    return view('giftvoucher');
-});
-Route::get('/customer/point', function () {
-    return view('point');
-});
-Route::get('/customer/profile', function () {
-    return view('profile');
-});
-Route::get('/customer/promotion', function () {
-    return view('promotion');
-});
+Route::post('product/{id}', 'Admin\ProductController@update')->name('product.update');
+
+
+//Route::resource('product', 'Admin\ProductController');
