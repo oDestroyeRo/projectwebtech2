@@ -18,7 +18,7 @@
                 <center> <label>Tel : <input type='text' placeholder="{{$a->tel}}"></label></center>
                 <center> <label>Address : <input type='text' placeholder="{{$a->address}}"></label></center>
                 <center> <label>Change password : <input type='password' ></input></label></center>
-                <center><input type='submit' value='submit' onclick={{route('editProfile')}}></button></center>
+                <center><input type='submit' value='submit' onclick=''></button></center>
       </div>
     @endforeach
 @endsection
