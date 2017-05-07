@@ -61,3 +61,10 @@ Route::post('/promotion/insert', [
   'uses' => 'PromotionController@insert',
   'as' => 'insert'
 ]);
+
+Route::get('/report', 'PromotionController@report');
+
+Route::post('/report2', [
+  'uses' => 'PromotionController@test',
+  'as' => 'report2'
+]);
