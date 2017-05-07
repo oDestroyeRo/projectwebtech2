@@ -46,9 +46,8 @@ Route::get('/customer/giftvoucher', 'GiftVoucherController@show');
 Route::get('/customer/point', function () {
     return view('point');
 });
-Route::get('/customer/profile', function () {
-    return view('profile');
-});
+Route::get('/customer/profile', 'ProfileController@show');
+Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 
 

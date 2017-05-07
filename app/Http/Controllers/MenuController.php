@@ -13,12 +13,6 @@ class MenuController extends BaseController
 {
     //
   public function show(){
-    // $obj = Products::first();
-    // $data['obj'] = $obj;
-    // return view('menu',[
-    //   'data' => $data
-    // ]);
-
     $data = DB::table('products')->get();
     return view('menu', ['data' => $data]);
   }
