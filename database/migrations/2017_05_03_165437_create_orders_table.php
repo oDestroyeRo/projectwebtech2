@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->string('user_id');
             $table->string('order_id')->primary();
-            $table->string('price');
+            $table->string('total_price');  //total_price = ราคารวมของ order_id นี้
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
