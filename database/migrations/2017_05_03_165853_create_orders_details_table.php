@@ -15,7 +15,7 @@ class CreateOrdersDetailsTable extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->string('order_id');
-            $table->string('user_id');
+            $table->string('product_id');
             $table->double('total_price');
             $table->timestamps();
             $table->softDeletes();

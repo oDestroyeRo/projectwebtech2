@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Home
                     </a>
                 </div>
 
@@ -44,16 +44,66 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        @if (Auth::guest())
+                            <li class="nav-item px-lg-3">
+                                <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Menu</a>
+                            </li>
+                            <li class="nav-item px-lg-3">
+                                <a class="nav-link text-uppercase text-expanded" href="/customer/promotion">PROMOTION</a>
+                            </li>
+                        @else
+                            <?php
+                            $user = \App\User::where('email', '=', Auth::user()->email)->first();
+
+                            if ($user->role == 'admin'){?>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
+
+                            <?php }
+                            else {
+                              if($user->role == 'customerfull'){?>
+
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Menu</a>
+                                </li>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/promotion">PROMOTION</a>
+                                </li>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/giftvoucher">GIFT VOUCHER</a>
+                                </li>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/point">POINT</a>
+                                </li>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/profile">PROFILE</a>
+                                </li>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order">ORDER</a>
+                                </li>
+
+                            <?php}
+                            else{?>
+                              <li class="nav-item px-lg-3">
+                                  <a class="nav-link text-uppercase text-expanded" href="/customer/order">changepassword</a>
+                              </li>
+
+                            <?php}
+                            }?>
+
+                        @endif
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="/product">Product</a></li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+
+                            <!-- <li><a href="{{ route('register') }}">Register</a></li> -->
                         @else
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<span class="caret"></span>

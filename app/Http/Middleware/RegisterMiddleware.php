@@ -29,13 +29,12 @@ class RegisterMiddleware
    */
 
   public function handle($request, Closure $next)
-  {
-          
-          $user = \App\User::where('email', '=', Auth::user()->email)->first();
+  {        
+      $user = \App\User::where('email', '=', Auth::user()->email)->first();
 
-          if ($user->role == 'customer'){
-              return redirect('changepassword');
-          }
-    return $next($request);
+      if ($user->role == 'customer'){
+            return redirect('changepassword');
+      }
+      return $next($request);
   }
 }

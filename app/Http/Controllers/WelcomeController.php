@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class WelcomeController extends Controller
 {
 
-
     /**
      * Show the application dashboard.
      *
@@ -16,9 +15,10 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        if(Auth::check() == true){
+        if(Auth::check()){
           $this->middleware('customer');
         }
+
         return view('welcome');
     }
 }
