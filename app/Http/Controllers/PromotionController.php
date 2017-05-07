@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Promotion;
 use File;
+use App\Order;
 
 class PromotionController extends Controller
 {
@@ -79,5 +80,56 @@ class PromotionController extends Controller
     $filename->delete();
     return 'delete'.' '.$id;
   }
+
+  // public function report()
+  // {
+  //   $reports = DB::table('orders')->join('order_dates', 'orders.order_id', '=','order_dates.order_id')
+  //   ->join('order_details', 'order_dates.order_id', '=','order_details.order_id')
+  //   ->join('products', 'order_details.order_id', '=','products.product_id')->get();
+  //   return view('admin.report',['reports' => $reports]);
+  // }
+
+
+  public function report()
+  {
+    $reports = DB::table('orders')
+    ->select('products.product_id','products.product_name','products.product_price',DB::raw('count(products.product_id) as amount'))
+    ->join('order_dates', 'orders.order_id', '=','order_dates.order_id')
+    ->join('order_details', 'order_dates.order_id', '=','order_details.order_id')
+    ->join('products', 'order_details.product_id', '=','products.product_id')
+    ->where('order_dates.date', '=', '2016-05-7')
+    ->groupBy('products.product_id','products.product_name','products.product_price')
+    ->get();
+    return view('admin.report',['reports' => $reports]);
+  }
+
+  // public function report()
+  // {
+  //   $reports = DB::table('orders')
+  //   ->select('products.*')
+  //   ->join('order_dates', 'orders.order_id', '=','order_dates.order_id')
+  //   ->join('order_details', 'order_dates.order_id', '=','order_details.order_id')
+  //   ->join('products', 'order_details.product_id', '=','products.product_id')
+  //   ->where('order_dates.date', '=', '2016-05-7')
+  //   ->groupBy('products.product_id','products.product_name','products.product_price')
+  //   ->get();
+  //   return view('admin.report',['reports' => $reports]);
+  //
+  // }
+
+  public function test()
+  {
+    return view('welcom');
+  }
+
+
+
+
+
+
+
+
+
+
 
 }
