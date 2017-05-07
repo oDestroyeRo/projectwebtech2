@@ -9,8 +9,10 @@
             <h1 class="text-center">All Menu</h1>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
     @foreach($data as $a)
-    <div class="row">
+
 
 
       <div class="col-xs-6 col-md-4">
@@ -23,4 +25,6 @@
 
       <!-- {{$a->product_name}} -->
     @endforeach
+    </div>
+    </div>
 @endsection
