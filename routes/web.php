@@ -47,7 +47,7 @@ Route::get('/customer/point', function () {
     return view('point');
 });
 Route::get('/customer/profile', 'ProfileController@show');
-Route::get('/customer/editProfile', 'ProfileController@update');
+// Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 
 

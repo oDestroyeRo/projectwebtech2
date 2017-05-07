@@ -4,8 +4,48 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aacda39e85d3fa49a91939161ccb7d3e",
+    "content-hash": "31daa8aa6cd3a7066d2cf10c2958cd8f",
     "packages": [
+        {
+            "name": "abhitheawesomecoder/laravel-edit-profile",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abhitheawesomecoder/laravel-edit-profile.git",
+                "reference": "94b6dd9ed5317a2a51cc0f4a70c880f8cc9b5f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abhitheawesomecoder/laravel-edit-profile/zipball/94b6dd9ed5317a2a51cc0f4a70c880f8cc9b5f56",
+                "reference": "94b6dd9ed5317a2a51cc0f4a70c880f8cc9b5f56",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abhitheawesomecoder\\Laraveleditprofile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abhishek Kumar",
+                    "email": "abhitheawesomecoder@gmail.com"
+                }
+            ],
+            "description": "package to add edit users profile feature to auth scaffold",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2016-04-16T07:49:07+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
