@@ -20,7 +20,7 @@ class ProfileController extends BaseController
                 ->get();
     return view('profile', ['data' => $data]);
   }
-  public fuction update(){
+  public function update(){
     echo 'dewid';
     DB::table('users')
             ->where('id', '2525')
