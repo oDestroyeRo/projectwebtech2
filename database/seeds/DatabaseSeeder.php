@@ -61,33 +61,63 @@ class DatabaseSeeder extends Seeder
         App\Product::create([
           'product_id' => '0001',
           'product_img' => 'img/1-1.png',
-          'product_name' => 'espresso',
+          'product_name' => 'Espresso',
           'product_price' => '25'
         ]);
         App\Product::create([
           'product_id' => '0002',
           'product_img' => 'img/2.png',
-          'product_name' => 'greentea',
+          'product_name' => 'Greentea',
           'product_price' => '20'
         ]);
         App\Product::create([
           'product_id' => '0003',
           'product_img' => 'img/3.png',
-          'product_name' => 'chocolate',
+          'product_name' => 'Chocolate',
           'product_price' => '20'
         ]);
         App\Product::create([
           'product_id' => '0004',
           'product_img' => 'img/4.png',
-          'product_name' => 'latte',
+          'product_name' => 'Latte',
           'product_price' => '25'
         ]);
         App\Product::create([
           'product_id' => '0005',
           'product_img' => 'img/5.png',
-          'product_name' => 'caramel macchiato',
+          'product_name' => 'Caramel Macchiato',
           'product_price' => '30'
         ]);
+        App\Product::create([
+          'product_id' => '0006',
+          'product_img' => 'img/6.png',
+          'product_name' => 'Cinnamon Cafe Mocha',
+          'product_price' => '45'
+        ]);
+        App\Product::create([
+          'product_id' => '0007',
+          'product_img' => 'img/7.png',
+          'product_name' => 'Cafe Mocha',
+          'product_price' => '45'
+        ]);
+        App\Product::create([
+          'product_id' => '0008',
+          'product_img' => 'img/8.png',
+          'product_name' => 'White Chocolate',
+          'product_price' => '40'
+        ]);
+        App\Product::create([
+          'product_id' => '0009',
+          'product_img' => 'img/9.png',
+          'product_name' => 'Plain Yogurt Smoothie',
+          'product_price' => '55'
+        ]);
+        // App\Product::create([
+        //   'product_id' => '0010',
+        //   'product_img' => 'img/10.png',
+        //   'product_name' => 'Walnutccino',
+        //   'product_price' => '55'
+        // ]);
 
         // Product Sizes
 
