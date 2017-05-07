@@ -90,7 +90,7 @@
                         <a class="nav-link text-uppercase text-expanded" href="/login">LOGIN</a>
                     </li>         
                     <li class="nav-item px-lg-3">
-                        <a class="nav-link text-uppercase text-expanded" href="/login">REGISTER</a>
+                        <a class="nav-link text-uppercase text-expanded" href="/register">REGISTER</a>
                     </li>               
                 </ul>
             </div>
@@ -101,14 +101,14 @@
         <div class="bg-faded p-4 my-4">
             <!-- Image Carousel -->
             <!-- Welcome Message -->
-            <div class="text-center mt-4">
+
         @yield('content')
                 <!--                 <div class="text-heading text-muted text-lg">By <strong>Start Bootstrap</strong></div> -->
-            </div>
+
         </div>
 
 </div>
-        @yield('content')
+
     <!-- /.container -->
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
