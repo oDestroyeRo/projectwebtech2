@@ -62,55 +62,55 @@ class DatabaseSeeder extends Seeder
           'product_id' => '0001',
           'product_img' => 'img/1-1.png',
           'product_name' => 'Espresso',
-          'product_price' => '25'
+          'product_price' => '60'
         ]);
         App\Product::create([
           'product_id' => '0002',
           'product_img' => 'img/2.png',
-          'product_name' => 'Greentea',
-          'product_price' => '20'
+          'product_name' => 'Green Latte',
+          'product_price' => '90'
         ]);
         App\Product::create([
           'product_id' => '0003',
           'product_img' => 'img/3.png',
           'product_name' => 'Chocolate',
-          'product_price' => '20'
+          'product_price' => '80'
         ]);
         App\Product::create([
           'product_id' => '0004',
           'product_img' => 'img/4.png',
-          'product_name' => 'Latte',
-          'product_price' => '25'
+          'product_name' => 'Caffe Latte',
+          'product_price' => '70'
         ]);
         App\Product::create([
           'product_id' => '0005',
           'product_img' => 'img/5.png',
           'product_name' => 'Caramel Macchiato',
-          'product_price' => '30'
+          'product_price' => '95'
         ]);
         App\Product::create([
           'product_id' => '0006',
           'product_img' => 'img/6.png',
           'product_name' => 'Cinnamon Cafe Mocha',
-          'product_price' => '45'
+          'product_price' => '95'
         ]);
         App\Product::create([
           'product_id' => '0007',
           'product_img' => 'img/7.png',
-          'product_name' => 'Cafe Mocha',
-          'product_price' => '45'
+          'product_name' => 'Caffe Mocha',
+          'product_price' => '85'
         ]);
         App\Product::create([
           'product_id' => '0008',
           'product_img' => 'img/8.png',
           'product_name' => 'White Chocolate',
-          'product_price' => '40'
+          'product_price' => '85'
         ]);
         App\Product::create([
           'product_id' => '0009',
           'product_img' => 'img/9.png',
           'product_name' => 'Plain Yogurt Smoothie',
-          'product_price' => '55'
+          'product_price' => '95'
         ]);
         // App\Product::create([
         //   'product_id' => '0010',
@@ -153,27 +153,39 @@ class DatabaseSeeder extends Seeder
 
         App\Promotion::create([
           'promotion_id' => '1',
-          'promotion_img' => 'img/pro1.jpg',
-          'description' => 'ซื้อหนึ่งแก้ว แก้วที่สองลด 50%',
+          'promotion_img' => 'img/pro1.png',
+          'description' => 'แก้วที่สองลด 50% เมื่อซื้อเครื่องดื่มรสชาติใดก็ได้ สามารถรับส่วนลด 50% ในการซื้อเครื่องดื่มแก้วที่สองรสชาติใดก็ได้',
           'discount' => '50'
         ]);
+        App\Promotion::create([
+          'promotion_id' => '2',
+          'promotion_img' => 'img/pro2.png',
+          'description' => 'เมื่อซื้อเครื่องดื่มตั้งแต่ 80 บาทขึ้นไปสามารถ upsize M free',
+          'discount' => '0'
+        ]);
+        // App\Promotion::create([
+        //   'promotion_id' => '2',
+        //   'promotion_img' => 'img/pro3.jpg',
+        //   'description' => 'ซื้อเครื่องดื่มครบ 200 บาท รับคะแนนสะสมคูณ 2 เมื่อซื้อเครื่องดื่มครบ 200 บาท จะได้รับคะแนนสะสมสองเท่า **เฉพาะลูกค้าที่เป็นสมาชิกเท่านั้น**',
+        //   'discount' => '0'
+        // ]);
 
         // Vouchers
 
         App\Voucher::create([
-          'voucher_img' => 'img/voucher1.jpg',
-          'voucher_point' => '15',
-          'voucher_price' => '30'
-        ]);
-        App\Voucher::create([
-          'voucher_img' => 'img/voucher1.jpg',
-          'voucher_point' => '25',
+          'voucher_img' => 'img/voucher1.png',
+          'voucher_point' => '150',
           'voucher_price' => '50'
         ]);
         App\Voucher::create([
-          'voucher_img' => 'img/voucher1.jpg',
-          'voucher_point' => '35',
-          'voucher_price' => '70'
+          'voucher_img' => 'img/voucher2.png',
+          'voucher_point' => '200',
+          'voucher_price' => '100'
+        ]);
+        App\Voucher::create([
+          'voucher_img' => 'img/voucher3.png',
+          'voucher_point' => '275',
+          'voucher_price' => '150'
         ]);
 
 
