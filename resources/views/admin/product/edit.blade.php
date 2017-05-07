@@ -22,7 +22,7 @@
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <label id="name"  class="form-control" name="name" > {{ $data->product_name }} </label>
+                                <label for="name"  class="col-md-4 control-label" > {{ $data->product_name }} </label>
                             </div>
                         </div>
 

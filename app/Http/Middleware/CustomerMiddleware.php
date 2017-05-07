@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerMiddleware
 {
@@ -27,9 +29,9 @@ class CustomerMiddleware
      */
     public function handle($request, Closure $next)
     {
-      $user = \App\User::where('email', '=', $this->auth->user()->email)->first();
+      $user = \App\User::where('email', '=', Auth::user()->email)->first();
 
-      if ($user->role != 'customer'){
+      if ($user->role != 'customerfull'){
           return redirect('');
       }
       return $next($request);

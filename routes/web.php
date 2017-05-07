@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 // $ composer require guzzlehttp/guzzle:~6.0
 
@@ -34,6 +32,10 @@ Route::get('product', 'Admin\ProductController@index')->name('product');
 Route::get('product/{id}/destroy', 'Admin\ProductController@destroy')->name('product.destroy');
 
 Route::post('product/{id}', 'Admin\ProductController@update')->name('product.update');
+
+Route::post('changepassword/{id}', 'Customer\ChangePasswordController@update')->name('changepassword.update');
+Route::get('changepassword', 'Customer\ChangePasswordController@index')->name('changepassword');
+
 
 
 //Route::resource('product', 'Admin\ProductController');
