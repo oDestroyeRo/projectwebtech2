@@ -54,7 +54,7 @@
 <body>
 
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">KK Coffee</div>
-    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-4 hidden-md-down">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-4 hidden-md-down">...</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-4">
