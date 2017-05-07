@@ -9,22 +9,14 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
-
-class ProfileController extends BaseController
+class OrderController extends Controller
 {
-    //
   public function show(){
 
-    $data = DB::table('users')
-                ->where('id', '=','2525' )
+    $data = DB::table('orders')
+                ->where('user_id', '=','2525' )
                 ->get();
-    return view('profile', ['data' => $data]);
+    return view('order', ['data' => $data]);
   }
-  // public fuction update(){
-  //   echo 'dewid';
-  //   DB::table('users')
-  //           ->where('id', '2525')
-  //           ->update(['firstname' => 'test']);
-  // }
 }
 ?>
