@@ -7,14 +7,24 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
-use App\Users;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
-class MenuController extends BaseController
+class ProfileController extends BaseController
 {
     //
   public function show(){
-  }
 
+    $data = DB::table('users')
+                ->where('id', '=','2525' )
+                ->get();
+    return view('profile', ['data' => $data]);
+  }
+  public fuction update(){
+    echo 'dewid';
+    DB::table('users')
+            ->where('id', '2525')
+            ->update(['firstname' => 'test']);
+  }
 }
 ?>
