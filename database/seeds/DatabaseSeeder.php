@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
 
         App\Product::create([
           'product_id' => '0001',
-          'product_img' => 'img/1.png',
+          'product_img' => 'img/1-1.png',
           'product_name' => 'espresso',
           'product_price' => '25'
         ]);
@@ -121,21 +121,27 @@ class DatabaseSeeder extends Seeder
 
         // Promotions
 
+        App\Promotion::create([
+          'promotion_id' => '1',
+          'promotion_img' => 'img/pro1.jpg',
+          'description' => 'ซื้อหนึ่งแก้ว แก้วที่สองลด 50%',
+          'discount' => '50'
+        ]);
 
         // Vouchers
 
         App\Voucher::create([
-          'voucher_id' => '000001',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '15',
           'voucher_price' => '30'
         ]);
         App\Voucher::create([
-          'voucher_id' => '000002',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '25',
           'voucher_price' => '50'
         ]);
         App\Voucher::create([
-          'voucher_id' => '000003',
+          'voucher_img' => 'img/voucher1.jpg',
           'voucher_point' => '35',
           'voucher_price' => '70'
         ]);

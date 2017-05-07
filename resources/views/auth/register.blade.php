@@ -13,7 +13,7 @@
                             <label for="id" class="col-md-4 control-label">ID</label>
 
                             <div class="col-md-6">
-                                  <label for="id" class="col-md-4 control-label"><?php  $id = \App\user::max('id'); echo $id+1; ?></label>
+                                  <label for="id" class="col-md-4 control-label"><?php  $id = \App\User::max('id'); echo $id+1; ?></label>
                             </div>
                         </div>
 
