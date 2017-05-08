@@ -145,6 +145,25 @@
     </div><!-- /.modal-dialog -->
   </div><!-- MODAL EDIT PROMOTION-->
 
+<!-- MODAL DELETE PROMOTION-->
+  <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Delete Promotion</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Do you want to delete?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="btnDelete" name="btnDelete" onclick="confirm()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div><!-- MODAL DELETE PROMOTION-->
+
 
       <br><br>
       <div class="panel panel-body">
@@ -158,12 +177,13 @@
           <?php endif; ?>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail item-container">
-              <img class="item-image" src="{{ URL::to($promotion->promotion_img) }}" alt="..." >
+              <img class="item-image" src="{{ URL::to($promotion->promotion_img) }}" alt="..." style="width:300px; height:300px;">
               <div class="caption item-detail">
                 <h3>Discount {{ $promotion->discount }} %</h3>
-                <p>{{ $promotion->description }}</p>
+                <h4>{{ $promotion->description }}</h4>
                 <p><a onclick="editPromotion({{ $promotion->promotion_id }})" class="btn btn-warning btn-sm" role="button" data-toggle="modal" data-target="#editModal">Edit</a>
-                  <a href="{{ url('promotion/delete/'.$promotion->promotion_id) }}" class="btn btn-danger btn-sm" role="button">Delete</a></p>
+                  <!-- <a href="{{ url('promotion/delete/'.$promotion->promotion_id) }}" class="btn btn-danger btn-sm" role="button">Delete</a></p> -->
+                  <a onclick="deletePro({{ $promotion->promotion_id }})" class="btn btn-danger btn-sm" role="button" data-toggle="modal" data-target="#deleteModal">Delete</a></p>
               </div>
             </div>
           </div>
@@ -183,6 +203,17 @@
 
 @section('script')
 <script>
+  function deletePro(id){
+    var url = '{{ url('/admin/promotion/delete/') }}';
+    $('#btnDelete').val(url+'/'+id);
+    console.log($('#btnDelete').val());
+  };
+
+  function confirm(){
+    var url = $('#btnDelete').val();
+    window.location.replace(url);
+  };
+
   function editPromotion(id){
     $.ajax({
       url: '{{ route('edit') }}',
