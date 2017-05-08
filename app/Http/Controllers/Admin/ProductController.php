@@ -66,7 +66,6 @@ class ProductController extends Controller
       $request->image->move(public_path('img'), $fullfilename);
 
       Product::create([
-          'product_id' => \App\product::max('product_id')+1,
           'product_name' => $request->name,
           'product_price' => $request->price,
           'product_img' =>  'img/'.$fullfilename
