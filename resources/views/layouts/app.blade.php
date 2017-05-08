@@ -101,9 +101,9 @@
                                 <li><a href="{{ route('voucher') }}"><h2>Voucher</h2></a></li>
                                 <li><a href="{{ route('register') }}"><h2>Register</h2></a></li>
                                 <li><a href="{{ route('user') }}"><h2>Users</h2></a></li>
-                                <li><a href="/promotion"><h2>Promotion</h2></a></li>
+                                <li><a href="/admin/promotion"><h2>Promotion</h2></a></li>
                                 <li><a href="/admin/report"><h2>Report</h2></a></li>
-
+                                <li><a href="/admin/order"><h2>Order</h2></a></li>
                             <?php }
                             else {
                               if($user->role == 'customerfull'){?>

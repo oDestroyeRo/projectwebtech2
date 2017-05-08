@@ -17,6 +17,10 @@ class ReportController extends Controller
 
   public function findByCurDate()
   {
+    $date = Carbon::now();
+    $splitDate = explode(' ', $date);
+    $ymd = $splitDate[0];
+
     $reports = DB::table('orders')
     ->select('products.product_name','products.product_price','order_details.price','product_sizes.size',
     'product_types.type',DB::raw('count(products.product_id) as amount'))
@@ -27,7 +31,7 @@ class ReportController extends Controller
     ->join('product_types', 'order_details.type', '=','product_types.type')
     //
     ->join('products', 'order_details.product_id', '=','products.product_id')
-    ->where('order_dates.date', '=', '2017-05-07')
+    ->where('order_dates.date', '=', $ymd)
     ->groupBy('products.product_name','products.product_price','order_details.price','product_sizes.size','product_types.type')
     ->get();
     return view('admin.report',['reports' => $reports]);

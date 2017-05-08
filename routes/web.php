@@ -67,24 +67,21 @@ Route::post('productdetail/storetype', 'Admin\ProductDetailController@storetype'
 
 
 // ---- admin ----
-Route::get('/promotion', 'PromotionController@allRecord');
+// Route::get('/admin/promotion', 'PromotionController@allRecord');
+
 // Route::post('/promotion/insert', 'PromotionController@insert');
-Route::get('promotion/edit/{id}','PromotionController@edit');
-Route::get('/promotion/delete/{id}','PromotionController@delete');
-
-Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
-
-Route::post('/promotion/insert', [
-  'uses' => 'PromotionController@insert',
-  'as' => 'insert'
-]);
-
-
-
-Route::post('/report2', [
-  'uses' => 'PromotionController@test',
-  'as' => 'report2'
-]);
+// Route::get('promotion/edit/{id}','PromotionController@edit');
+// Route::get('/promotion/delete/{id}','PromotionController@delete');
+//
+// Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
+//
+//
+//
+//
+// Route::post('/report2', [
+//   'uses' => 'PromotionController@test',
+//   'as' => 'report2'
+// ]);
 
 Route::get('productdetail/{id}/editsize', 'Admin\ProductDetailController@editsize')->name('productdetail.editsize');
 Route::get('productdetail/{id}/edittype', 'Admin\ProductDetailController@edittype')->name('productdetail.edittype');
@@ -120,13 +117,39 @@ Route::get('/admin/report/{date}','ReportController@findByDate');
 Route::get('/admin/report','ReportController@findByCurDate');
 
 
-//Promotion
 
-
-Route::get('/find', [
-  'uses' => 'PromotionController@findDate',
-  'as' => 'find'
+//PROMOTION
+Route::get('/admin/promotion', 'PromotionController@allRecord');
+Route::post('/admin/promotion/insert', [
+  'uses' => 'PromotionController@insert',
+  'as' => 'insert'
 ]);
+Route::post('/admin/promotion/update', [
+  'uses' => 'PromotionController@update',
+  'as' => 'update'
+]);
+Route::post('/promotion/edit', [
+  'uses' => 'PromotionController@edit',
+  'as' => 'edit'
+]);
+
+//Order
+Route::get('/admin/order','OrderController@getAllRecord');
+Route::get('/admin/order/{id}','OrderController@findByID');
+
+
+//Promotion
+// Route::get('/admin/promotion', 'PromotionController@allRecord');
+//
+// Route::get('/admin/promotion/edit/{id}','PromotionController@edit');
+//
+// Route::get('/admin/promotion/delete/{id}','PromotionController@delete');
+
+
+// Route::get('/find', [
+//   'uses' => 'PromotionController@findDate',
+//   'as' => 'find'
+// ]);
 
 
 // Route::any('/report', [
@@ -135,9 +158,7 @@ Route::get('/find', [
 // ]);
 
 
-//REPORT
-Route::get('/admin/report', 'ReportController@findByCurDate');
-Route::get('/admin/report/{date}','ReportController@findByDate');
+
 
 
 
