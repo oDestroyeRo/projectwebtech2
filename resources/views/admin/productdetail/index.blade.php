@@ -16,12 +16,16 @@
                           </tr>
                       </thead>
                       <tbody>
+
                           @foreach ($productsize as $d)
+                          <form class="form-horizontal" role="form" method="post" action="productdetail/{{ $d->size }}/destroysize">
+                              {{ csrf_field() }}
                           <tr>
                               <td>{{ $d->size }}</td>
                               <td>{{ $d->size_price }}</td>
-                            <td><a class="btn btn-danger btn-sm pull-right"  onclick="return confirm('Are you sure?')" href="productdetail/{{$d->size}}/destroysize"> Delete</a><a class="btn btn-info btn-sm pull-right" href="productdetail/{{$d->size}}/editsize">Edit</a></td>
+                            <td><button class="btn btn-danger btn-sm pull-right" type="submit" onclick="return confirm('Are you sure?')"> Delete</button><a class="btn btn-info btn-sm pull-right" href="productdetail/{{$d->size}}/editsize">Edit</a></td>
                           </tr>
+                          <form>
                           @endforeach
                       </tbody>
                   </table>
@@ -42,11 +46,14 @@
                       </thead>
                       <tbody>
                           @foreach ($producttype as $d)
+                          <form class="form-horizontal" role="form" method="post" action="productdetail/{{ $d->type }}/destroytype">
+                            {{ csrf_field() }}
                           <tr>
                               <td>{{ $d->type }}</td>
                               <td>{{ $d->type_price }}</td>
-                              <td><a class="btn btn-danger btn-sm pull-right"  onclick="return confirm('Are you sure?')" href="productdetail/{{$d->type}}/destroytype"> Delete</a><a class="btn btn-info btn-sm pull-right" href="productdetail/{{$d->type}}/edittype">Edit</a></td>
+                              <td><button class="btn btn-danger btn-sm pull-right" type="submit" onclick="return confirm('Are you sure?')"> Delete</button><a class="btn btn-info btn-sm pull-right" href="productdetail/{{$d->type}}/edittype">Edit</a></td>
                           </tr>
+                          <form>
                           @endforeach
                       </tbody>
                   </table>

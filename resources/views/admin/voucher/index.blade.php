@@ -9,7 +9,7 @@
 
                 <div class="panel-body" >
                   @foreach ($data as $d)
-                  <form class="form-horizontal" role="form" method="get" action="voucher/{{ $d->voucher_id }}/destroy">
+                  <form class="form-horizontal" role="form" method="post" action="voucher/{{ $d->voucher_id }}/destroy">
                       {{ csrf_field() }}
                     <div class="col-xs-6 col-md-6">
                       <div  class="thumbnail">
