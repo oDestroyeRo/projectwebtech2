@@ -20,10 +20,10 @@ class PointController extends BaseController
   public function show(){
     $user = Auth::user();
     $id = Auth::id();
-
     $data = DB::table('user_details')
                 ->where('id', '=', $id )
                 ->get();
     return view('point', ['data' => $data]);
   }
+
 }

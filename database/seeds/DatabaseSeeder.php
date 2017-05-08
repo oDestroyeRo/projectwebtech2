@@ -54,7 +54,10 @@ class DatabaseSeeder extends Seeder
 
         // User Details
 
-
+        App\UserDetail::create([
+          'id' => '3434',
+          'point' => '100'
+        ]);
 
         // Products
 
