@@ -61,8 +61,7 @@
 
                             <?php }
                             else {
-                              if($user->role == 'customerfull'){?>
-
+                              if($user->role == 'customer'){?>
                                 <li class="nav-item px-lg-3">
                                     <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Menu</a>
                                 </li>
@@ -82,13 +81,13 @@
                                     <a class="nav-link text-uppercase text-expanded" href="/customer/order">ORDER</a>
                                 </li>
 
-                            <?php}
-                            else{?>
-                              <li class="nav-item px-lg-3">
-                                  <a class="nav-link text-uppercase text-expanded" href="/customer/order">changepassword</a>
-                              </li>
+                            <?php  }
+                              else{ ?>
+                                <li class="nav-item px-lg-3">
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order">changepassword</a>
+                                </li>
 
-                            <?php}
+                            <?php  }
                             }?>
 
                         @endif
