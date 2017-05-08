@@ -5,7 +5,7 @@
 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard <a href='product/create' class="btn btn-success btn-sm pull-right">Add Product</a></div>
+                <div class="panel-heading">Dashboard <a href='product/create' class="btn btn-success btn-sm pull-right">Add Product</a><a class="btn btn-info btn-sm pull-right" href="/productdetail">ProductDetail</a></div>
 
                 <div class="panel-body" >
                   @foreach ($data as $d)

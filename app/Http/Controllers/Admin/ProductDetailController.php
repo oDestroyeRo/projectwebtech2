@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Product;
+use App\ProductSize;
+use App\ProductType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Database\Eloquent\SoftDeletes; // <-- This is required
 
-class ProductController extends Controller
+class ProductDetailController extends Controller
 {
-    use SoftDeletes;
+
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('admin');
     }
 
-    protected $redirectTo = '/product';
+    protected $redirectTo = '/productdetail';
     public function redirectPath()
     {
         if (method_exists($this, 'redirectTo')) {
@@ -33,9 +33,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-      $product = \App\Product::all();
-        return view('admin.product.index', [
-          'data' => $product
+      $productsize = \App\ProductSize::all();
+      $producttype = \App\ProductType::all();
+        return view('admin.productdetail.index', [
+          'productsize' => $productsize,
+          'producttype' => $producttype,
         ]);
     }
 
@@ -44,9 +46,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createsize()
     {
-        return view('admin.product.create');
+        return view('admin.productdetail.createsize');
+    }
+
+    public function createtype()
+    {
+        return view('admin.productdetail.createtype');
     }
 
     /**
@@ -55,21 +62,31 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storesize(Request $request)
     {
       $this->validator($request->all())->validate();
 
-      $filename = \App\product::max('product_id')+1;
-      $fullfilename = $filename.'.png';
 
-      $request->image = $request->file('image');
-      $request->image->move(public_path('img'), $fullfilename);
+      ProductSize::create([
+          'size' => $request->name,
+          'size_price' => $request->price,
+      ]);
 
-      Product::create([
-          'product_id' => \App\product::max('product_id')+1,
-          'product_name' => $request->name,
-          'product_price' => $request->price,
-          'product_img' =>  'img/'.$fullfilename
+
+
+      return redirect($this->redirectPath());
+    }
+
+
+
+    public function storetype(Request $request)
+    {
+      $this->validator($request->all())->validate();
+
+
+      ProductType::create([
+          'type' => $request->name,
+          'type_price' => $request->price,
       ]);
 
 
@@ -94,12 +111,20 @@ class ProductController extends Controller
      * @param  \App\Product  $Product
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editsize($id)
     {
-      $product = \App\Product::where('product_id', '=', $id)->first();
+      $productsize = \App\ProductSize::where('size', '=', $id)->first();
 
-      return view('admin.product.edit', [
-        'data' => $product
+      return view('admin.productdetail.editsize', [
+        'data' => $productsize
+      ]);
+    }
+    public function edittype($id)
+    {
+      $producttype = \App\ProductType::where('type', '=', $id)->first();
+
+      return view('admin.productdetail.edittype', [
+        'data' => $producttype
       ]);
     }
 
@@ -110,21 +135,22 @@ class ProductController extends Controller
      * @param  \App\Product  $Product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function updatesize(Request $request,$id)
     {
       $this->validator2($request->all())->validate();
-        \App\Product::where('product_id', '=', $id)->update([
-          'product_price' => $request->price
+        \App\ProductSize::where('size', '=', $id)->update([
+          'size_price' => $request->price
         ]);
-      // else{
-      //   $product2 = \App\Product::where('product_id', '=', $product->product_id)->update([
-      //     'product_name' => $request->name,
-      //     'product_price' => $request->price,
-      //     'product_img' => $request->image_edit,
-      //
-      //   ]);
-      //
-      // }
+
+      return redirect($this->redirectPath());
+    }
+
+    public function updatetype(Request $request,$id)
+    {
+      $this->validator2($request->all())->validate();
+        \App\ProductType::where('type', '=', $id)->update([
+          'type_price' => $request->price
+        ]);
 
       return redirect($this->redirectPath());
     }
@@ -135,12 +161,16 @@ class ProductController extends Controller
      * @param  \App\Product  $Product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroysize($id)
     {
-      $product = \App\Product::where('product_id', '=', $id)->first();
-      $image = $product->product_img;
-      unlink($image);
-      $product = \App\Product::where('product_id', '=', $id)->delete();
+      $product = \App\ProductSize::where('size', '=', $id)->delete();
+
+      return redirect($this->redirectPath());
+    }
+
+    public function destroytype($id)
+    {
+      $product = \App\ProductType::where('type', '=', $id)->delete();
 
       return redirect($this->redirectPath());
     }
@@ -149,7 +179,6 @@ class ProductController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'image' => 'required|image',
             'price' => 'required|numeric'
         ]);
     }
@@ -159,4 +188,5 @@ class ProductController extends Controller
             'price' => 'required|numeric'
         ]);
     }
+
 }
