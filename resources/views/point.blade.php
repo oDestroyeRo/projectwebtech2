@@ -34,17 +34,17 @@
                   <th>Exchange</th>
                 </tr>
                 <tr>
-                  <td id='p100'>100 points</td>
+                  <td>100 points</td>
                   <td>hot amaricano (size s)</td>
                   <td><button type="submit" >print</button></td>
                 </tr>
                 <tr>
-                  <td id='p200'>200 points</td>
+                  <td>200 points</td>
                   <td>every coffee (size m)</td>
                   <td><button type="button" name="button" >print</button></td>
                 </tr>
                 <tr>
-                  <td id='p500'>500 points</td>
+                  <td>500 points</td>
                   <td>coupon 200 baht</td>
                   <td><button type="button" name="button" >print</button></td>
                 </tr>
