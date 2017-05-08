@@ -62,55 +62,46 @@ class DatabaseSeeder extends Seeder
         // Products
 
         App\Product::create([
-          'product_id' => '0001',
           'product_img' => 'img/1-1.png',
           'product_name' => 'Espresso',
           'product_price' => '60'
         ]);
         App\Product::create([
-          'product_id' => '0002',
           'product_img' => 'img/2.png',
           'product_name' => 'Green Latte',
           'product_price' => '90'
         ]);
         App\Product::create([
-          'product_id' => '0003',
           'product_img' => 'img/3.png',
           'product_name' => 'Chocolate',
           'product_price' => '80'
         ]);
         App\Product::create([
-          'product_id' => '0004',
           'product_img' => 'img/4.png',
           'product_name' => 'Caffe Latte',
           'product_price' => '70'
         ]);
         App\Product::create([
-          'product_id' => '0005',
           'product_img' => 'img/5.png',
           'product_name' => 'Caramel Macchiato',
           'product_price' => '95'
         ]);
         App\Product::create([
-          'product_id' => '0006',
           'product_img' => 'img/6.png',
           'product_name' => 'Cinnamon Cafe Mocha',
           'product_price' => '95'
         ]);
         App\Product::create([
-          'product_id' => '0007',
           'product_img' => 'img/7.png',
           'product_name' => 'Caffe Mocha',
           'product_price' => '85'
         ]);
         App\Product::create([
-          'product_id' => '0008',
           'product_img' => 'img/8.png',
           'product_name' => 'White Chocolate',
           'product_price' => '85'
         ]);
         App\Product::create([
-          'product_id' => '0009',
           'product_img' => 'img/9.png',
           'product_name' => 'Plain Yogurt Smoothie',
           'product_price' => '95'

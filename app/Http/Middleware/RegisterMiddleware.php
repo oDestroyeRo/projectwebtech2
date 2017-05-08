@@ -29,7 +29,7 @@ class RegisterMiddleware
    */
 
   public function handle($request, Closure $next)
-  {        
+  {
       $user = \App\User::where('email', '=', Auth::user()->email)->first();
 
       if ($user->role == 'customer'){

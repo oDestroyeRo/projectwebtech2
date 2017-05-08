@@ -2,38 +2,48 @@
 
 @section('content')
     @if (Auth::guest())
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="text-center">The Wongklom Singer</h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block img-fluid w-100" src="img/slide-1.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-shadow"></h3>
+                    <p class="text-shadow"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src="img/slide-2.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-shadow"></h3>
+                    <p class="text-shadow"></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src="img/slide-3.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-shadow"></h3>
+                    <p class="text-shadow"></p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="https://unsplash.it/200?image=0" alt="Sample Image">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
         </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="https://unsplash.it/200?image=1" alt="Sample Image">
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
         </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="https://unsplash.it/200?image=2" alt="Sample Image">
-        </a>
-      </div>
-      <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-          <img src="https://unsplash.it/200?image=3" alt="Sample Image">
-        </a>
-      </div>
     </div>
     @else
 
       <?php
       $user = \App\User::where('email', '=', Auth::user()->email)->first();
-
       if ($user->role == 'customer'){ ?>
         <div class="container">
             <div class="row">
@@ -93,6 +103,47 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+      <?php }
+      else{ ?>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid w-100" src="img/slide-1.jpg" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="text-shadow"></h3>
+                        <p class="text-shadow"></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid w-100" src="img/slide-2.jpg" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="text-shadow"></h3>
+                        <p class="text-shadow"></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid w-100" src="img/slide-3.jpg" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 class="text-shadow"></h3>
+                        <p class="text-shadow"></p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
       <?php } ?>

@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('voucher/create', 'Admin\VoucherController@create')->name('voucher.create');
+Route::get('voucher/{id}/edit', 'Admin\VoucherController@edit')->name('voucher.edit');
+Route::post('voucher', 'Admin\VoucherController@store')->name('voucher.store');
+Route::get('voucher', 'Admin\VoucherController@index')->name('voucher');
+Route::get('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
+Route::post('voucher/{id}', 'Admin\VoucherController@update')->name('voucher.update');
+
 
 Route::get('/index', function () {
     return view('index');
@@ -86,6 +93,8 @@ Route::post('productdetail/{id}/edittype', 'Admin\ProductDetailController@update
 Route::post('productdetail/{id}/editsize', 'Admin\ProductDetailController@updatesize')->name('productdetail.updatesize');
 
 Route::get('productdetail', 'Admin\ProductDetailController@index')->name('productdetail');
+
+Route::get('user', 'Admin\UserController@index')->name('user');
 
 Route::get('productdetail/{id}/destroysize', 'Admin\ProductDetailController@destroysize')->name('productdetail.destroysize');
 Route::get('productdetail/{id}/destroytype', 'Admin\ProductDetailController@destroytype')->name('productdetail.destroytype');

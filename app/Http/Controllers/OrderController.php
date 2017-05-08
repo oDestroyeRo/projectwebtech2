@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends BaseController
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+      $this->middleware('customerfull');
+  }
     //
   public function show(){
     $user = Auth::user();

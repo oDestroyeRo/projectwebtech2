@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Product;
+use App\Voucher;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-
-class ProductController extends Controller
+class VoucherController extends Controller
 {
     public function __construct()
     {
@@ -16,7 +15,7 @@ class ProductController extends Controller
         $this->middleware('admin');
     }
 
-    protected $redirectTo = '/product';
+    protected $redirectTo = '/voucher';
     public function redirectPath()
     {
         if (method_exists($this, 'redirectTo')) {
@@ -32,9 +31,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-      $product = \App\Product::all();
-        return view('admin.product.index', [
-          'data' => $product
+      $voucher = \App\Voucher::all();
+        return view('admin.voucher.index', [
+          'data' => $voucher
         ]);
     }
 
@@ -45,7 +44,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        return view('admin.voucher.create');
     }
 
     /**
@@ -58,16 +57,16 @@ class ProductController extends Controller
     {
       $this->validator($request->all())->validate();
 
-      $filename = \App\product::max('product_id')+1;
-      $fullfilename = 'product'.$filename.'.png';
+      $filename = \App\Voucher::max('voucher_id')+1;
+      $fullfilename = 'voucher'.$filename.'.png';
 
       $request->image = $request->file('image');
       $request->image->move(public_path('img'), $fullfilename);
 
-      Product::create([
-          'product_name' => $request->name,
-          'product_price' => $request->price,
-          'product_img' =>  'img/'.$fullfilename
+      Voucher::create([
+          'voucher_point' => $request->point,
+          'voucher_price' => $request->price,
+          'voucher_img' =>  'img/'.$fullfilename
       ]);
 
 
@@ -94,9 +93,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-      $product = \App\Product::where('product_id', '=', $id)->first();
+      $product = \App\Voucher::where('voucher_id', '=', $id)->first();
 
-      return view('admin.product.edit', [
+      return view('admin.voucher.edit', [
         'data' => $product
       ]);
     }
@@ -111,8 +110,9 @@ class ProductController extends Controller
     public function update(Request $request,$id)
     {
       $this->validator2($request->all())->validate();
-        \App\Product::where('product_id', '=', $id)->update([
-          'product_price' => $request->price
+        \App\Voucher::where('voucher_id', '=', $id)->update([
+          'voucher_price' => $request->price,
+          'voucher_point' => $request->point
         ]);
       // else{
       //   $product2 = \App\Product::where('product_id', '=', $product->product_id)->update([
@@ -135,10 +135,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-      $product = \App\Product::where('product_id', '=', $id)->first();
-      $image = $product->product_img;
+      $product = \App\Voucher::where('voucher_id', '=', $id)->first();
+      $image = $product->voucher_img;
       unlink($image);
-      $product = \App\Product::where('product_id', '=', $id)->delete();
+      $product = \App\Voucher::where('voucher_id', '=', $id)->delete();
 
       return redirect($this->redirectPath());
     }
@@ -146,7 +146,7 @@ class ProductController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'point' => 'required|numeric',
             'image' => 'required|image',
             'price' => 'required|numeric'
         ]);
@@ -154,7 +154,9 @@ class ProductController extends Controller
     protected function validator2(array $data)
     {
         return Validator::make($data, [
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'point' => 'required|numeric'
         ]);
     }
+
 }
