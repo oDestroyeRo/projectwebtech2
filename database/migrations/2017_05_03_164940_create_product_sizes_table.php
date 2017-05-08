@@ -18,6 +18,7 @@ class CreateProductSizesTable extends Migration
             $table->double('size_price');
             $table->timestamps();
             $table->softDeletes();
+
         });
 
     }
