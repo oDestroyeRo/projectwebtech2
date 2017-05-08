@@ -190,65 +190,71 @@ class DatabaseSeeder extends Seeder
 
 
         // Orders
-        // App\Order::create([
-        //   'user_id' => '2525',
-        //   'order_id' => '1',
-        //   'total_price' => '50'
-        // ]);
+        // $customer = App\User::where('id', '=', '2525')->first();
+        // if(!is_null($customer)){
+        //   $customer->order()->saveMany([
+        //     new App\Order(['order_id' => '1', 'total_price' => '195'])
+        //   ])
+        // }
+        App\Order::create([
+          'id' => '2525',
+          'order_id' => '1',
+          'total_price' => '50'
+        ]);
 
-        // App\Order::create([
-        //   'user_id' => '2525',
-        //   'order_id' => '2',
-        //   'total_price' => '50'
-        // ]);
-        //
-        // App\Order::create([
-        //   'user_id' => '3434',
-        //   'order_id' => '3',
-        //   'total_price' => '50'
-        // ]);
-        //
-        //
-        // // Order_datails
-        // App\OrderDetail::create([
-        //   'order_id' => '1',
-        //   'product_id' => '0001',
-        //   'price' => '500',
-        //   'size' => 'm',
-        //   'type' => 'hot'
-        // ]);
-        //
-        // App\OrderDetail::create([
-        //   'order_id' => '2',
-        //   'product_id' => '0002',
-        //   'price' => '300',
-        //   'size' => 'l',
-        //   'type' => 'ice'
-        // ]);
-        //
-        // App\OrderDetail::create([
-        //   'order_id' => '3',
-        //   'product_id' => '0003',
-        //   'price' => '800',
-        //   'size' => 's',
-        //   'type' => 'freppe'
-        // ]);
-        //
-        // // Order_dete
-        // App\OrderDate::create([
-        //   'order_id' => '1',
-        //   'date' => '2016-05-7'
-        // ]);
-        //
-        // App\OrderDate::create([
-        //   'order_id' => '2',
-        //   'date' => '2016-05-7'
-        // ]);
-        //
-        // App\OrderDate::create([
-        //   'order_id' => '3',
-        //   'date' => '2016-05-7'
-        // ]);
+        App\Order::create([
+          'id' => '2525',
+          'order_id' => '2',
+          'total_price' => '50'
+        ]);
+
+        App\Order::create([
+          'id' => '3434',
+          'order_id' => '3',
+          'total_price' => '50'
+        ]);
+
+
+        // Order_datails
+        App\OrderDetail::create([
+          'order_id' => '1',
+          'product_id' => '0001',
+          'price' => '500',
+          'size' => 'm',
+          'type' => 'hot'
+        ]);
+
+        App\OrderDetail::create([
+          'order_id' => '2',
+          'product_id' => '0002',
+          'price' => '300',
+          'size' => 'l',
+          'type' => 'ice'
+        ]);
+
+        App\OrderDetail::create([
+          'order_id' => '3',
+          'product_id' => '0003',
+          'price' => '800',
+          'size' => 's',
+          'type' => 'freppe'
+        ]);
+
+        // Order_dete
+        App\OrderDate::create([
+          'order_id' => '1',
+          'date' => '2016-05-7'
+        ]);
+
+        App\OrderDate::create([
+          'order_id' => '2',
+          'date' => '2016-05-7'
+        ]);
+
+        App\OrderDate::create([
+          'order_id' => '3',
+          'date' => '2016-05-7'
+        ]);
 
 
 

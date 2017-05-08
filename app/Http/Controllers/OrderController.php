@@ -20,8 +20,8 @@ class OrderController extends BaseController
    $data = DB::table('orders')
             ->join('order_details', 'orders.order_id', '=', 'order_details.order_id')
             ->join('products', 'products.product_id', '=', 'order_details.product_id')
-            ->select('orders.user_id', 'order_details.*', 'products.product_name')
-            ->where('orders.user_id', '=',$id)
+            ->select('orders.id', 'order_details.*', 'products.product_name')
+            ->where('orders.id', '=',$id)
             ->get();
     return view('order', ['data' => $data]);
   }
