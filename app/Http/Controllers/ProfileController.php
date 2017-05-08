@@ -9,22 +9,39 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends BaseController
 {
     //
   public function show(){
+    $user = Auth::user();
+    $id = Auth::id();
+    echo $user;
+    echo "<br>"."$id";
 
     $data = DB::table('users')
-                ->where('id', '=','2525' )
+                ->where('id', '=', $id )
                 ->get();
     return view('profile', ['data' => $data]);
   }
-  public function update(){
+  public function update(request $request,$id){
     echo 'dewid';
     DB::table('users')
-            ->where('id', '2525')
-            ->update(['firstname' => 'test']);
+            ->where('id', '=', $id)
+            ->update(['firstname' => $request->input('firstname'),
+                      'lastname' => $request->input('lastname'),
+                      'tel' => $request->input('tel'),
+                      'address' => $request->input('address'),
+                      'password' =>bcrypt($request->input('pass'))
+          ]);
+          $data = DB::table('users')
+                      ->where('id', '=', $id )
+                      ->get();
+          return view('profile',[
+            'data' => $data
+          ]);
+    // return redirect()->to('/customer/profile/{id}');
   }
 }
 ?>

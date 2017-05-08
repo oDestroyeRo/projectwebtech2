@@ -57,6 +57,8 @@ Route::get('/promotion', 'PromotionController@allRecord');
 Route::get('promotion/edit/{id}','PromotionController@edit');
 Route::get('/promotion/delete/{id}','PromotionController@delete');
 
+Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
+
 Route::post('/promotion/insert', [
   'uses' => 'PromotionController@insert',
   'as' => 'insert'
