@@ -34,18 +34,18 @@
                   <th>Exchange</th>
                 </tr>
                 <tr>
-                  <td></td>
-                  <td></td>
+                  <td>100 points</td>
+                  <td>hot amaricano (size s)</td>
+                  <td><button type="button" name="button" onclick="route">exchange</button></td>
+                </tr>
+                <tr>
+                  <td>200 points</td>
+                  <td>every coffee (size m)</td>
                   <td><button type="button" name="button">exchange</button></td>
                 </tr>
                 <tr>
-                  <td>100 points</td>
-                  <td>hot amaricano (size s)</td>
-                  <td><button type="button" name="button">exchange</button></td>
-                </tr>
-                <tr>
-                  <td>100 points</td>
-                  <td>hot amaricano (size s)</td>
+                  <td>500 points</td>
+                  <td>coupon 200 baht</td>
                   <td><button type="button" name="button">exchange</button></td>
                 </tr>
               </table>

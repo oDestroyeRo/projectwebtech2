@@ -58,6 +58,11 @@ class DatabaseSeeder extends Seeder
           'id' => '3434',
           'point' => '100'
         ]);
+        App\UserDetail::create([
+          'id' => '2525',
+          'point' => '600'
+        ]);
+
 
         // Products
 
