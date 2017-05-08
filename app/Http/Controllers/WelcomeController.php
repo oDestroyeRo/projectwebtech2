@@ -15,10 +15,6 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        if(Auth::check()){
-          $this->middleware('customer');
-        }
-
         return view('welcome');
     }
 }
