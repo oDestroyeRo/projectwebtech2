@@ -47,6 +47,7 @@ Route::get('/customer/point', function () {
     return view('point');
 });
 Route::get('/customer/profile', 'ProfileController@show');
+Route::get('/customer/order', 'OrderController@show');
 // Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 
@@ -62,4 +63,11 @@ Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.
 Route::post('/promotion/insert', [
   'uses' => 'PromotionController@insert',
   'as' => 'insert'
+]);
+
+Route::get('/report', 'PromotionController@report');
+
+Route::post('/report2', [
+  'uses' => 'PromotionController@test',
+  'as' => 'report2'
 ]);

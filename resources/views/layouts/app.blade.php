@@ -22,7 +22,14 @@
     <link href="{{ asset('css/business-casual.css') }}" rel="stylesheet">
     <!-- Temporary navbar container fix -->
 
-    
+    <!-- Datepicker -->
+    <link href="{{ asset('datepicker/css/bootstrap-datepicker.css') }}" rel="stylesheet">
+
+    <!-- DataTable -->
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css" rel="stylesheet">
+
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -34,14 +41,14 @@
     .navbar-toggler {
         z-index: 1;
     }
-    
+
     @media (max-width: 576px) {
         nav > .container {
             width: 100%;
         }
     }
     /* Temporary fix for img-fluid sizing within the carousel */
-    
+
     .carousel-item.active,
     .carousel-item-next,
     .carousel-item-prev {
@@ -85,13 +92,13 @@
                     </li>
                     <li class="nav-item px-lg-3">
                         <a class="nav-link text-uppercase text-expanded" href="/customer/order">ORDER</a>
-                    </li>    
+                    </li>
                     <li class="nav-item px-lg-3">
                         <a class="nav-link text-uppercase text-expanded" href="/login">LOGIN</a>
-                    </li>         
+                    </li>
                     <li class="nav-item px-lg-3">
-                        <a class="nav-link text-uppercase text-expanded" href="/login">REGISTER</a>
-                    </li>               
+                        <a class="nav-link text-uppercase text-expanded" href="/register">REGISTER</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -101,10 +108,10 @@
         <div class="bg-faded p-4 my-4">
             <!-- Image Carousel -->
             <!-- Welcome Message -->
-            <div class="text-center mt-4">
+
         @yield('content')
                 <!--                 <div class="text-heading text-muted text-lg">By <strong>Start Bootstrap</strong></div> -->
-            </div>
+
         </div>
 
 </div>
@@ -119,5 +126,6 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/tether/tether.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    @yield('script')
 
 </html>
