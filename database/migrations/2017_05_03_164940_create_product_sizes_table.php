@@ -15,7 +15,7 @@ class CreateProductSizesTable extends Migration
     {
         Schema::create('product_sizes', function (Blueprint $table) {
             $table->string('size')->primary();
-            $table->integer('size_price');
+            $table->double('size_price');
             $table->timestamps();
             $table->softDeletes();
         });

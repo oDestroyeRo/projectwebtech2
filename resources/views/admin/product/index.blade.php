@@ -5,18 +5,22 @@
 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard <a href='product/create' class="btn btn-success btn-sm pull-right">Add Product</a></div>
+                <div class="panel-heading">Dashboard <a href='product/create' class="btn btn-success btn-sm pull-right">Add Product</a><a class="btn btn-info btn-sm pull-right" href="/productdetail">ProductDetail</a></div>
 
                 <div class="panel-body" >
                   @foreach ($data as $d)
-                  <div class="col-xs-6 col-md-3">
-                    <div  class="thumbnail">
-                      <h3>{{$d->product_name}}</h3>
-                      <img src='{{ $d->product_img }}' alt="Sample Image">
-                      <a class="btn btn-info btn-sm"  > Edit</a>
-                      <a class="btn btn-danger btn-sm" > Delete</a>
+                  <form class="form-horizontal" role="form" method="get" action="product/{{ $d->product_id }}/destroy">
+                      {{ csrf_field() }}
+                    <div class="col-xs-6 col-md-3">
+                      <div  class="thumbnail">
+                        <h3>{{$d->product_name}}</h3>
+                        <img src='{{ $d->product_img }}' alt="Sample Image">
+                        <h3>{{$d->product_price}} Bath</h3>
+                        <a class="btn btn-info btn-sm"  href='product/{{$d->product_id}}/edit'> Edit</a>
+                        <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure?')"> Delete</button>
+                      </div>
                     </div>
-                  </div>
+                </form>
                   @endforeach
                 </div>
 
