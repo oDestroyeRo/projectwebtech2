@@ -3,25 +3,25 @@
 
 
 @section('content')
-<style>
-  table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-  }
-  th, td {
-      padding: 5px;
-  }
-  th,tr {
-      text-align: center;
-  }
-</style>
     <div class="jumbotron">
         <div class="container">
 
             <h1 class="text-center">Your Order</h1>
         </div>
+        <h2>id : {{ Auth::id()}} </h2>
     </div>
-    <center> <h2>id : {{ Auth::id()}} </h2> </center>
+    <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+      }
+      th,tr {
+          text-align: center;
+      }
+    </style>
 
     <div class="row">
       <div class="col-xs-6 col-md-4">
@@ -29,18 +29,20 @@
       </div>
       <table style="width:100%">
     <tr>
-      <th>Menu</th>
-        <th>Size</th>
-          <th>Type</th>
-            <th>Price</th>
+      <th><h3>Menu</h3></th>
+      <th><h3>Size</h3></th>
+      <th><h3>Type</h3></th>
+      <th><h3>Price</h3></th>
     </tr>
-      <tr>
       @foreach($data as $a)
-      <td>{{$a->product_name}}</td>
-      <td>{{$a->size}}</td>
-      <td>{{$a->type}}</td>
-      <td>{{$a->price}}</td>
+      <tr>
+
+      <td><h3>{{$a->product_name}}</h3></td>
+      <td><h3>{{$a->size}}</h3></td>
+      <td><h3>{{$a->type}}</h3></td>
+      <td><h3>{{$a->price}}</h3></td>
 </tr>
-  </table>
     @endforeach
+  </table>
+
 @endsection

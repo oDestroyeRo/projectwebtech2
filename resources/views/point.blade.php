@@ -29,23 +29,23 @@
             <div>
               <table style="width:100%;">
                 <tr>
-                  <th>Points</th>
-                  <th>Description</th>
-                  <th>Exchange</th>
+                  <th><h3>Points</h3></th>
+                  <th><h3>Description</h3></th>
+                  <th><h3>Exchange</h3></th>
                 </tr>
                 <tr>
-                  <td>100 points</td>
-                  <td>hot amaricano (size s)</td>
+                  <td><h3>100 points</h3></td>
+                  <td><h3>hot amaricano (size s)</h3></td>
                   <td><button type="submit" >print</button></td>
                 </tr>
                 <tr>
-                  <td>200 points</td>
-                  <td>every coffee (size m)</td>
+                  <td><h3>200 points</h3></td>
+                  <td><h3>every coffee (size m)</h3></td>
                   <td><button type="button" name="button" >print</button></td>
                 </tr>
                 <tr>
-                  <td>500 points</td>
-                  <td>coupon 200 baht</td>
+                  <td><h3>500 points</h3></td>
+                  <td><h3>coupon 200 baht</h3></td>
                   <td><button type="button" name="button" >print</button></td>
                 </tr>
               </table>
