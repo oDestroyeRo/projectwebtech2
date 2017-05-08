@@ -23,7 +23,7 @@
     <link href="{{ asset('css/business-casual.css') }}" rel="stylesheet">
     <!-- Temporary navbar container fix -->
 
-    
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -35,14 +35,14 @@
     .navbar-toggler {
         z-index: 1;
     }
-    
+
     @media (max-width: 576px) {
         nav > .container {
             width: 100%;
         }
     }
     /* Temporary fix for img-fluid sizing within the carousel */
-    
+
     .carousel-item.active,
     .carousel-item-next,
     .carousel-item-prev {
@@ -93,6 +93,7 @@
                                 <li><a href="/product"><h2>Product</h2></a></li>
                                 <li><a href="{{ route('voucher') }}"><h2>Voucher</h2></a></li>
                                 <li><a href="{{ route('register') }}"><h2>Register</h2></a></li>
+                                <li><a href="{{ route('user') }}"><h2>Users</h2></a></li>
 
                             <?php }
                             else {
@@ -118,9 +119,7 @@
 
                             <?php  }
                               else{ ?>
-                                <li class="nav-item px-lg-3">
-                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order"><h2>changepassword<h2></a>
-                                </li>
+
 
                             <?php  }
                             }?>
@@ -167,10 +166,10 @@
         <div class="bg-faded p-4 my-4">
             <!-- Image Carousel -->
             <!-- Welcome Message -->
-     
+
         @yield('content')
                 <!--                 <div class="text-heading text-muted text-lg">By <strong>Start Bootstrap</strong></div> -->
-     
+
     <!--     </div> -->
 </div>
 </div>

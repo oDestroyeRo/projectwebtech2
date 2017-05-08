@@ -94,6 +94,8 @@ Route::post('productdetail/{id}/editsize', 'Admin\ProductDetailController@update
 
 Route::get('productdetail', 'Admin\ProductDetailController@index')->name('productdetail');
 
+Route::get('user', 'Admin\UserController@index')->name('user');
+
 Route::get('productdetail/{id}/destroysize', 'Admin\ProductDetailController@destroysize')->name('productdetail.destroysize');
 Route::get('productdetail/{id}/destroytype', 'Admin\ProductDetailController@destroytype')->name('productdetail.destroytype');
 
