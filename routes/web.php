@@ -40,9 +40,9 @@ Route::get('/home', 'HomeController@index');
 // Route::get('product', 'Admin\ProductController@index');
 Route::get('product/create', 'Admin\ProductController@create')->name('product.create');
 Route::get('product/{id}/edit', 'Admin\ProductController@edit')->name('product.edit');
-Route::post('product', 'Admin\ProductController@store')->name('product.store');
+Route::post('product/create', 'Admin\ProductController@store')->name('product.store');
 Route::get('product', 'Admin\ProductController@index')->name('product');
-Route::get('product/{id}/destroy', 'Admin\ProductController@destroy')->name('product.destroy');
+Route::post('product/{id}/destroy', 'Admin\ProductController@destroy')->name('product.destroy');
 Route::post('product/{id}', 'Admin\ProductController@update')->name('product.update');
 
 Route::get('/customer', function () {
@@ -96,8 +96,8 @@ Route::get('productdetail', 'Admin\ProductDetailController@index')->name('produc
 
 Route::get('user', 'Admin\UserController@index')->name('user');
 
-Route::get('productdetail/{id}/destroysize', 'Admin\ProductDetailController@destroysize')->name('productdetail.destroysize');
-Route::get('productdetail/{id}/destroytype', 'Admin\ProductDetailController@destroytype')->name('productdetail.destroytype');
+Route::post('productdetail/{id}/destroysize', 'Admin\ProductDetailController@destroysize')->name('productdetail.destroysize');
+Route::post('productdetail/{id}/destroytype', 'Admin\ProductDetailController@destroytype')->name('productdetail.destroytype');
 
 
 
