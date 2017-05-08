@@ -14,7 +14,7 @@ Route::get('voucher/create', 'Admin\VoucherController@create')->name('voucher.cr
 Route::get('voucher/{id}/edit', 'Admin\VoucherController@edit')->name('voucher.edit');
 Route::post('voucher', 'Admin\VoucherController@store')->name('voucher.store');
 Route::get('voucher', 'Admin\VoucherController@index')->name('voucher');
-Route::post('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
+Route::get('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
 Route::post('voucher/{id}', 'Admin\VoucherController@update')->name('voucher.update');
 
 
@@ -58,7 +58,6 @@ Route::get('/customer/giftvoucher', 'GiftVoucherController@show');
 Route::get('/customer/point', 'PointController@show');
 Route::get('/customer/profile', 'ProfileController@show');
 Route::get('/customer/order', 'OrderController@show');
-Route::get('/customer/print','PrintController@show');
 // Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 Route::get('productdetail/createsize', 'Admin\ProductDetailController@createsize')->name('productdetail.createsize');
@@ -80,7 +79,7 @@ Route::post('/promotion/insert', [
   'as' => 'insert'
 ]);
 
-Route::get('/report', 'PromotionController@report');
+
 
 Route::post('/report2', [
   'uses' => 'PromotionController@test',
@@ -104,6 +103,44 @@ Route::post('productdetail/{id}/destroytype', 'Admin\ProductDetailController@des
 
 Route::post('changepassword/{id}', 'Customer\ChangePasswordController@update')->name('changepassword.update');
 Route::get('changepassword', 'Customer\ChangePasswordController@index')->name('changepassword');
+
+
+
+
+
+
+// Route::any('/report', [
+//   'uses' => 'PromotionController@findCurdate',
+//   'as' => 'report'
+// ]);
+
+
+// REPORT
+Route::get('/admin/report/{date}','ReportController@findByDate');
+Route::get('/admin/report','ReportController@findByCurDate');
+
+
+//Promotion
+
+
+Route::get('/find', [
+  'uses' => 'PromotionController@findDate',
+  'as' => 'find'
+]);
+
+
+// Route::any('/report', [
+//   'uses' => 'PromotionController@findCurdate',
+//   'as' => 'report'
+// ]);
+
+
+//REPORT
+Route::get('/admin/report', 'ReportController@findByCurDate');
+Route::get('/admin/report/{date}','ReportController@findByDate');
+
+
+
 
 
 

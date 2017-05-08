@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use File;
+use Carbon\Carbon;
 
 class ReportController extends Controller
 {
@@ -13,6 +14,7 @@ class ReportController extends Controller
       $this->middleware('auth');
       $this->middleware('admin');
   }
+
   public function findByCurDate()
   {
     $reports = DB::table('orders')
