@@ -28,7 +28,7 @@
             <img class="item-image" src="{{ URL::to($order->product_img) }}" alt="..." >
             <div class="caption item-detail">
               <h3> {{ $order->product_name }} </h3>
-              <p>{{ $order->amount }}</p>
+              <h5> Amount {{ $order->amount }}</h5>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
 @section('script')
 <script>
   function getDateOrder(){
-    var url = '{{ URL::to('/order') }}';
+    var url = '{{ URL::to('/admin/order') }}';
     console.log(url);
     var id = $('#orderID').val();
     var find = url+'/'+id;

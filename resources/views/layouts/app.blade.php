@@ -23,6 +23,13 @@
     <link href="{{ asset('css/business-casual.css') }}" rel="stylesheet">
     <!-- Temporary navbar container fix -->
 
+    <!-- Datepicker -->
+    <link href="{{ asset('datepicker/css/bootstrap-datepicker.css') }}" rel="stylesheet">
+
+    <!-- DataTable -->
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css" rel="stylesheet">
+
 
     <!-- Scripts -->
     <script>
@@ -94,8 +101,9 @@
                                 <li><a href="{{ route('voucher') }}"><h2>Voucher</h2></a></li>
                                 <li><a href="{{ route('register') }}"><h2>Register</h2></a></li>
                                 <li><a href="{{ route('user') }}"><h2>Users</h2></a></li>
-                                <li><a href="/promotion"><h2>Promotion</h2></a></li>
-
+                                <li><a href="/admin/promotion"><h2>Promotion</h2></a></li>
+                                <li><a href="/admin/report"><h2>Report</h2></a></li>
+                                <li><a href="/admin/order"><h2>Order</h2></a></li>
                             <?php }
                             else {
                               if($user->role == 'customerfull'){?>
