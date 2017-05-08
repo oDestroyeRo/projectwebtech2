@@ -17,8 +17,6 @@ class ProfileController extends BaseController
   public function show(){
     $user = Auth::user();
     $id = Auth::id();
-    echo $user;
-    echo "<br>"."$id";
 
     $data = DB::table('users')
                 ->where('id', '=', $id )
@@ -26,7 +24,6 @@ class ProfileController extends BaseController
     return view('profile', ['data' => $data]);
   }
   public function update(request $request,$id){
-    echo 'dewid';
     DB::table('users')
             ->where('id', '=', $id)
             ->update(['firstname' => $request->input('firstname'),
