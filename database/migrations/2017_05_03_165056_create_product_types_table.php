@@ -15,7 +15,7 @@ class CreateProductTypesTable extends Migration
     {
         Schema::create('product_types', function (Blueprint $table) {
             $table->string('type')->primary();
-            $table->integer('type_price');
+            $table->double('type_price');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -8,21 +8,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Product</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="post" action="{{ route('product.update',$data->product_id) }}" enctype="multipart/form-data">
+                    <form class="form-horizontal" role="form" method="post" action="{{ route('productdetail.updatesize',$data->size) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="id" class="col-md-4 control-label">ID</label>
-
-                            <div class="col-md-6">
-                                  <label for="id" class="col-md-4 control-label">{{ $data->product_id }}</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Size</label>
 
                             <div class="col-md-6">
-                                <label for="name"  class="col-md-4 control-label" > {{ $data->product_name }} </label>
+                                <label for="name"  class="col-md-4 control-label" > {{ $data->size }} </label>
                             </div>
                         </div>
 
@@ -31,7 +24,7 @@
                             <label for="price" class="col-md-4 control-label">Price</label>
 
                             <div class="col-md-6">
-                                <input id="price" type="text" class="form-control" name="price" value="{{ $data->product_price }}" required>
+                                <input id="price" type="text" class="form-control" name="price" value="{{ $data->size_price }}" required>
 
                                 @if ($errors->has('price'))
                                     <span class="help-block">

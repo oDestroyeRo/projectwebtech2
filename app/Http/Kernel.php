@@ -18,6 +18,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\RedirectIfAuthenticated::class,
+        //\App\Http\Middleware\RegisterMiddleware::class,
+
     ];
 
     /**
@@ -51,6 +54,9 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'customer' => \App\Http\Middleware\RegisterMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'customerfull' => \App\Http\Middleware\CustomerMiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
