@@ -57,8 +57,8 @@ Route::get('/customer/giftvoucher', 'GiftVoucherController@show');
 
 Route::get('/customer/point', 'PointController@show');
 Route::get('/customer/profile', 'ProfileController@show');
+Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
 Route::get('/customer/order', 'OrderController@show');
-// Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 Route::get('productdetail/createsize', 'Admin\ProductDetailController@createsize')->name('productdetail.createsize');
 Route::get('productdetail/createtype', 'Admin\ProductDetailController@createtype')->name('productdetail.createtype');
