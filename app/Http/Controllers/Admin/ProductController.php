@@ -59,7 +59,7 @@ class ProductController extends Controller
       $this->validator($request->all())->validate();
 
       $filename = \App\product::max('product_id')+1;
-      $fullfilename = $filename.'.png';
+      $fullfilename = 'product'.$filename.'.png';
 
       $request->image = $request->file('image');
       $request->image->move(public_path('img'), $fullfilename);
