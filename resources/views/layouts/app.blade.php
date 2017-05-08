@@ -57,6 +57,7 @@
 
                             if ($user->role == 'admin'){?>
                                 <li><a href="/product">Product</a></li>
+                                <li><a href="{{ route('voucher') }}">Voucher</a></li>
                                 <li><a href="{{ route('register') }}">Register</a></li>
 
                             <?php }
@@ -84,7 +85,7 @@
                             <?php  }
                               else{ ?>
                                 <li class="nav-item px-lg-3">
-                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order">changepassword</a>
+                                    <a class="nav-link text-uppercase text-expanded" href="">changepassword</a>
                                 </li>
 
                             <?php  }
