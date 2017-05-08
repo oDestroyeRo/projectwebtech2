@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Test Report</h1>
+    <center><h1>Report Order</h1></center>
     <div class="container">
-
-      <center><div class="col-md-6">
-        <input type="text" class="form-control" id="reportDate" placeholder="Date" onchange="getDate()">
-      </div></center>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="reportDate" placeholder="Date" onchange="getDate()">
+        </div>
+      </div>
       <br><br>
       <table id="table" class="display" cellspacing="0" width="100%">
           <thead>
@@ -50,7 +52,7 @@
   });
 
   function getDate(){
-    var url = '{{ URL::to('/report') }}';
+    var url = '{{ URL::to('/admin/report') }}';
     console.log(url);
     var date = $('#reportDate').val();
     var res = date.split("/");

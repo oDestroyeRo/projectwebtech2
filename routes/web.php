@@ -14,7 +14,7 @@ Route::get('voucher/create', 'Admin\VoucherController@create')->name('voucher.cr
 Route::get('voucher/{id}/edit', 'Admin\VoucherController@edit')->name('voucher.edit');
 Route::post('voucher', 'Admin\VoucherController@store')->name('voucher.store');
 Route::get('voucher', 'Admin\VoucherController@index')->name('voucher');
-Route::post('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
+Route::get('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
 Route::post('voucher/{id}', 'Admin\VoucherController@update')->name('voucher.update');
 
 
@@ -58,7 +58,6 @@ Route::get('/customer/giftvoucher', 'GiftVoucherController@show');
 Route::get('/customer/point', 'PointController@show');
 Route::get('/customer/profile', 'ProfileController@show');
 Route::get('/customer/order', 'OrderController@show');
-Route::get('/customer/print','PrintController@show');
 // Route::get('/customer/editProfile', 'ProfileController@update');
 Route::get('/customer/promotion', 'PromotionController@show');
 Route::get('productdetail/createsize', 'Admin\ProductDetailController@createsize')->name('productdetail.createsize');
@@ -68,24 +67,21 @@ Route::post('productdetail/storetype', 'Admin\ProductDetailController@storetype'
 
 
 // ---- admin ----
-Route::get('/promotion', 'PromotionController@allRecord');
+// Route::get('/admin/promotion', 'PromotionController@allRecord');
+
 // Route::post('/promotion/insert', 'PromotionController@insert');
-Route::get('promotion/edit/{id}','PromotionController@edit');
-Route::get('/promotion/delete/{id}','PromotionController@delete');
-
-Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
-
-Route::post('/promotion/insert', [
-  'uses' => 'PromotionController@insert',
-  'as' => 'insert'
-]);
-
-Route::get('/report', 'PromotionController@report');
-
-Route::post('/report2', [
-  'uses' => 'PromotionController@test',
-  'as' => 'report2'
-]);
+// Route::get('promotion/edit/{id}','PromotionController@edit');
+// Route::get('/promotion/delete/{id}','PromotionController@delete');
+//
+// Route::post('/customer/profile/{id}','ProfileController@update')->name('profile.update');
+//
+//
+//
+//
+// Route::post('/report2', [
+//   'uses' => 'PromotionController@test',
+//   'as' => 'report2'
+// ]);
 
 Route::get('productdetail/{id}/editsize', 'Admin\ProductDetailController@editsize')->name('productdetail.editsize');
 Route::get('productdetail/{id}/edittype', 'Admin\ProductDetailController@edittype')->name('productdetail.edittype');
@@ -104,6 +100,68 @@ Route::post('productdetail/{id}/destroytype', 'Admin\ProductDetailController@des
 
 Route::post('changepassword/{id}', 'Customer\ChangePasswordController@update')->name('changepassword.update');
 Route::get('changepassword', 'Customer\ChangePasswordController@index')->name('changepassword');
+
+
+
+
+
+
+// Route::any('/report', [
+//   'uses' => 'PromotionController@findCurdate',
+//   'as' => 'report'
+// ]);
+
+
+// REPORT
+Route::get('/admin/report/{date}','ReportController@findByDate');
+Route::get('/admin/report','ReportController@findByCurDate');
+
+
+
+//PROMOTION
+Route::get('/admin/promotion', 'PromotionController@allRecord');
+Route::post('/admin/promotion/insert', [
+  'uses' => 'PromotionController@insert',
+  'as' => 'insert'
+]);
+Route::post('/admin/promotion/update', [
+  'uses' => 'PromotionController@update',
+  'as' => 'update'
+]);
+Route::post('/promotion/edit', [
+  'uses' => 'PromotionController@edit',
+  'as' => 'edit'
+]);
+
+//Order
+Route::get('/admin/order','OrderController@getAllRecord');
+Route::get('/admin/order/{id}','OrderController@findByID');
+
+
+//Promotion
+// Route::get('/admin/promotion', 'PromotionController@allRecord');
+//
+// Route::get('/admin/promotion/edit/{id}','PromotionController@edit');
+//
+// Route::get('/admin/promotion/delete/{id}','PromotionController@delete');
+
+
+// Route::get('/find', [
+//   'uses' => 'PromotionController@findDate',
+//   'as' => 'find'
+// ]);
+
+
+// Route::any('/report', [
+//   'uses' => 'PromotionController@findCurdate',
+//   'as' => 'report'
+// ]);
+
+
+
+
+
+
 
 
 
