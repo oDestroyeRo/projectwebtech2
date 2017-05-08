@@ -132,6 +132,7 @@ Route::post('/promotion/edit', [
   'uses' => 'PromotionController@edit',
   'as' => 'edit'
 ]);
+Route::get('/admin/promotion/delete/{id}','PromotionController@delete');
 
 //Order
 Route::get('/admin/order','OrderController@getAllRecord');

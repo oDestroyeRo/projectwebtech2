@@ -89,7 +89,7 @@ class PromotionController extends Controller
     $filename = Promotion::where('promotion_id', '=', $id);
     File::delete($filename->first()->promotion_img);
     $filename->delete();
-    return 'delete'.' '.$id;
+    return redirect()->action('PromotionController@allRecord');
   }
 
 

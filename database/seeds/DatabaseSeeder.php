@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
           'type_price' => '5'
         ]);
         App\ProductType::create([
-          'type' => 'iced',
+          'type' => 'ice',
           'type_price' => '10'
         ]);
         App\ProductType::create([
@@ -242,17 +242,17 @@ class DatabaseSeeder extends Seeder
         // Order_dete
         App\OrderDate::create([
           'order_id' => '1',
-          'date' => '2016-05-7'
+          'date' => '2017-05-07'
         ]);
 
         App\OrderDate::create([
           'order_id' => '2',
-          'date' => '2016-05-7'
+          'date' => '2017-05-09'
         ]);
 
         App\OrderDate::create([
           'order_id' => '3',
-          'date' => '2016-05-7'
+          'date' => '2017-05-09'
         ]);
 
 

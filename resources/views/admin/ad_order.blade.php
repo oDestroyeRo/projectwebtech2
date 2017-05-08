@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <center><h1>Test Order</h1></center>
+    <center><h1>User Order</h1></center>
     <div class="container">
       <form class="form-inline">
         <div class="col-md-10">
@@ -14,7 +14,9 @@
     </div>
 
     <br><br>
-    <div class="panel panel-body">
+    <div class="panel panel-default">
+    <div class="panel-heading"><h3>Order</h3></div>
+    <div class="panel-body">
       <?php $count=0; ?>
       @foreach($orders as $order)
       <!-- ROW-1 -->
@@ -39,6 +41,7 @@
       <!-- </div> -->
     @endforeach
   </div>
+</div>
   <div class="text-center">
     {!! $orders->links(); !!}
   </div>

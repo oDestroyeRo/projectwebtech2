@@ -63,8 +63,9 @@ class OrderController extends BaseController
   public function findByID($id)
   {
     $orders = DB::table('orders')
-    ->select('products.product_img','products.product_name','products.product_price','order_details.price','product_sizes.size',
+    ->select('users.firstname','users.lastname','products.product_img','products.product_name','products.product_price','order_details.price','product_sizes.size',
     'product_types.type',DB::raw('count(products.product_id) as amount'))
+    ->join('users', 'orders.id', '=','users.id')
     ->join('order_dates', 'orders.order_id', '=','order_dates.order_id')
     ->join('order_details', 'order_dates.order_id', '=','order_details.order_id')
     //
@@ -73,7 +74,7 @@ class OrderController extends BaseController
     //
     ->join('products', 'order_details.product_id', '=','products.product_id')
     ->where('orders.order_id', '=', $id)
-    ->groupBy('products.product_img','products.product_name','products.product_price','order_details.price','product_sizes.size','product_types.type')
+    ->groupBy('users.firstname','users.lastname','products.product_img','products.product_name','products.product_price','order_details.price','product_sizes.size','product_types.type')
     ->paginate(6);
     // View::make('admin.report',['reports' => $reports])->render();
     return view('admin.ad_order',['orders' => $orders,'type' => 'one']);
