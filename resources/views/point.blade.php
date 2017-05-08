@@ -5,7 +5,7 @@
 @section('content')
     <div class="jumbotron">
         <div class="container">
-            <h1 class="text-center">Your Point</h1>
+            <h1 class="text-center">Your Points</h1>
         </div>
     </div>
     @foreach($data as $a)
@@ -25,7 +25,7 @@
     </style>
     <div class="jumbotron">
         <div class="container">
-            <h1 class="text-center">Gift Voucher</h1>
+            <h1 class="text-center">Gift Voucherss</h1>
             <div>
               <table style="width:100%;">
                 <tr>
@@ -34,22 +34,23 @@
                   <th>Exchange</th>
                 </tr>
                 <tr>
-                  <td>100 points</td>
+                  <td id='p100'>100 points</td>
                   <td>hot amaricano (size s)</td>
-                  <td><button type="button" name="button" onclick="route">exchange</button></td>
+                  <td><button type="submit" >print</button></td>
                 </tr>
                 <tr>
-                  <td>200 points</td>
+                  <td id='p200'>200 points</td>
                   <td>every coffee (size m)</td>
-                  <td><button type="button" name="button">exchange</button></td>
+                  <td><button type="button" name="button" >print</button></td>
                 </tr>
                 <tr>
-                  <td>500 points</td>
+                  <td id='p500'>500 points</td>
                   <td>coupon 200 baht</td>
-                  <td><button type="button" name="button">exchange</button></td>
+                  <td><button type="button" name="button" >print</button></td>
                 </tr>
               </table>
             </div>
         </div>
+</form>
     </div>
 @endsection
