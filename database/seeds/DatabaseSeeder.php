@@ -154,13 +154,13 @@ class DatabaseSeeder extends Seeder
         App\Promotion::create([
           'promotion_id' => '1',
           'promotion_img' => 'img/pro1.png',
-          'description' => 'แก้วที่สองลด 50% เมื่อซื้อเครื่องดื่มรสชาติใดก็ได้ สามารถรับส่วนลด 50% ในการซื้อเครื่องดื่มแก้วที่สองรสชาติใดก็ได้',
+          'description' => 'Buy 2 get 50% discount',
           'discount' => '50'
         ]);
         App\Promotion::create([
           'promotion_id' => '2',
           'promotion_img' => 'img/pro2.png',
-          'description' => 'เมื่อซื้อเครื่องดื่มตั้งแต่ 80 บาทขึ้นไปสามารถ upsize M free',
+          'description' => 'Get M size free if you buy more than 80 Baht',
           'discount' => '0'
         ]);
         // App\Promotion::create([
