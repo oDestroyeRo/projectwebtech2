@@ -154,13 +154,13 @@ class DatabaseSeeder extends Seeder
         App\Promotion::create([
           'promotion_id' => '1',
           'promotion_img' => 'img/pro1.png',
-          'description' => 'แก้วที่สองลด 50% เมื่อซื้อเครื่องดื่มรสชาติใดก็ได้ สามารถรับส่วนลด 50% ในการซื้อเครื่องดื่มแก้วที่สองรสชาติใดก็ได้',
+          'description' => 'Buy 2 get 50% discount',
           'discount' => '50'
         ]);
         App\Promotion::create([
           'promotion_id' => '2',
           'promotion_img' => 'img/pro2.png',
-          'description' => 'เมื่อซื้อเครื่องดื่มตั้งแต่ 80 บาทขึ้นไปสามารถ upsize M free',
+          'description' => 'Get M size free if you buy more than 80 Baht',
           'discount' => '0'
         ]);
         // App\Promotion::create([
@@ -190,65 +190,71 @@ class DatabaseSeeder extends Seeder
 
 
         // Orders
-        // App\Order::create([
-        //   'user_id' => '2525',
-        //   'order_id' => '1',
-        //   'total_price' => '50'
-        // ]);
+        // $customer = App\User::where('id', '=', '2525')->first();
+        // if(!is_null($customer)){
+        //   $customer->order()->saveMany([
+        //     new App\Order(['order_id' => '1', 'total_price' => '195'])
+        //   ])
+        // }
+        App\Order::create([
+          'id' => '2525',
+          'order_id' => '1',
+          'total_price' => '50'
+        ]);
 
-        // App\Order::create([
-        //   'user_id' => '2525',
-        //   'order_id' => '2',
-        //   'total_price' => '50'
-        // ]);
-        //
-        // App\Order::create([
-        //   'user_id' => '3434',
-        //   'order_id' => '3',
-        //   'total_price' => '50'
-        // ]);
-        //
-        //
-        // // Order_datails
-        // App\OrderDetail::create([
-        //   'order_id' => '1',
-        //   'product_id' => '0001',
-        //   'price' => '500',
-        //   'size' => 'm',
-        //   'type' => 'hot'
-        // ]);
-        //
-        // App\OrderDetail::create([
-        //   'order_id' => '2',
-        //   'product_id' => '0002',
-        //   'price' => '300',
-        //   'size' => 'l',
-        //   'type' => 'ice'
-        // ]);
-        //
-        // App\OrderDetail::create([
-        //   'order_id' => '3',
-        //   'product_id' => '0003',
-        //   'price' => '800',
-        //   'size' => 's',
-        //   'type' => 'freppe'
-        // ]);
-        //
-        // // Order_dete
-        // App\OrderDate::create([
-        //   'order_id' => '1',
-        //   'date' => '2016-05-7'
-        // ]);
-        //
-        // App\OrderDate::create([
-        //   'order_id' => '2',
-        //   'date' => '2016-05-7'
-        // ]);
-        //
-        // App\OrderDate::create([
-        //   'order_id' => '3',
-        //   'date' => '2016-05-7'
-        // ]);
+        App\Order::create([
+          'id' => '2525',
+          'order_id' => '2',
+          'total_price' => '50'
+        ]);
+
+        App\Order::create([
+          'id' => '3434',
+          'order_id' => '3',
+          'total_price' => '50'
+        ]);
+
+
+        // Order_datails
+        App\OrderDetail::create([
+          'order_id' => '1',
+          'product_id' => '0001',
+          'price' => '500',
+          'size' => 'm',
+          'type' => 'hot'
+        ]);
+
+        App\OrderDetail::create([
+          'order_id' => '2',
+          'product_id' => '0002',
+          'price' => '300',
+          'size' => 'l',
+          'type' => 'ice'
+        ]);
+
+        App\OrderDetail::create([
+          'order_id' => '3',
+          'product_id' => '0003',
+          'price' => '800',
+          'size' => 's',
+          'type' => 'freppe'
+        ]);
+
+        // Order_dete
+        App\OrderDate::create([
+          'order_id' => '1',
+          'date' => '2016-05-7'
+        ]);
+
+        App\OrderDate::create([
+          'order_id' => '2',
+          'date' => '2016-05-7'
+        ]);
+
+        App\OrderDate::create([
+          'order_id' => '3',
+          'date' => '2016-05-7'
+        ]);
 
 
 
