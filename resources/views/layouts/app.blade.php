@@ -89,10 +89,10 @@
                         @else
                             <?php
                             $user = \App\User::where('email', '=', Auth::user()->email)->first();
-
                             if ($user->role == 'admin'){?>
-                                <li><a href="/product"><h2>Product</h2></a></li>
-                                <li><a href="{{ route('register') }}"><h2>Register</h2></a></li>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="{{ route('voucher') }}">Voucher</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
 
                             <?php }
                             else {
@@ -119,7 +119,7 @@
                             <?php  }
                               else{ ?>
                                 <li class="nav-item px-lg-3">
-                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order"><h2>changepassword</h2></a>
+                                    <a class="nav-link text-uppercase text-expanded" href="/customer/order">changepassword</a>
                                 </li>
 
                             <?php  }
@@ -140,7 +140,7 @@
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<span class="caret"></span>
+                                 <h4>   {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h4><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -171,8 +171,9 @@
         @yield('content')
                 <!--                 <div class="text-heading text-muted text-lg">By <strong>Start Bootstrap</strong></div> -->
      
-        </div>
-
+    <!--     </div> -->
+</div>
+</div>
 </div>
     <!-- /.container -->
     <!-- Scripts -->
