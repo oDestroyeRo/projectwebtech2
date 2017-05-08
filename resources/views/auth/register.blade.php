@@ -8,7 +8,7 @@
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+                      <h4>  {{ csrf_field() }} </h4> 
                         <div class="form-group">
                             <label for="id" class="col-md-4 control-label">ID</label>
 
