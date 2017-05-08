@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 class PointController extends BaseController
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+      $this->middleware('customerfull');
+  }
   public function show(){
     $user = Auth::user();
     $id = Auth::id();

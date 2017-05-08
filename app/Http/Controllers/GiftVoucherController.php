@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class GiftVoucherController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+      $this->middleware('customerfull');
+  }
   public function show(){
 
     $voucher = DB::table('vouchers')->get();

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends BaseController
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+      $this->middleware('customerfull');
+  }
   protected $redirectTo = '/customer/profile';
   public function redirectPath()
   {
