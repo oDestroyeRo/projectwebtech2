@@ -61,7 +61,7 @@
 
                             <?php }
                             else {
-                              if($user->role == 'customer'){?>
+                              if($user->role == 'customerfull'){?>
                                 <li class="nav-item px-lg-3">
                                     <a class="nav-link text-uppercase text-expanded" href="/customer/menu">Menu</a>
                                 </li>
