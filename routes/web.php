@@ -14,7 +14,7 @@ Route::get('voucher/create', 'Admin\VoucherController@create')->name('voucher.cr
 Route::get('voucher/{id}/edit', 'Admin\VoucherController@edit')->name('voucher.edit');
 Route::post('voucher', 'Admin\VoucherController@store')->name('voucher.store');
 Route::get('voucher', 'Admin\VoucherController@index')->name('voucher');
-Route::get('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
+Route::post('voucher/{id}/destroy', 'Admin\VoucherController@destroy')->name('voucher.destroy');
 Route::post('voucher/{id}', 'Admin\VoucherController@update')->name('voucher.update');
 
 
