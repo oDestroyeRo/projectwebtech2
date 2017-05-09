@@ -1,7 +1,7 @@
 **READ ME**
 1.  Clone projectwebtech2 ขึ้นมา
 2.       ใน terminal ให้ cd ไปที่โฟเดอร์ที่โคลนมา แล้ว พิมพ์ composer install เมื่อ install เสร็จให้พิมพ์ npm install
-3. 	พิม copy-item -path .env.example -destination .env แล้วพิม  php artisan key:generate
+3. 	พิม copy .env.example .env แล้วพิม  php artisan key:generate
 4.	จากนั้นใส่
 	DB_DATABASE=ชื่อดาต้าเบส
 	DB_USERNAME=username ของดาต้าเบส
