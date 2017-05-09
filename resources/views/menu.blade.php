@@ -17,6 +17,7 @@
         <!-- <a href="#" class="thumbnail"> -->
           <center> <img src="/{{$a->product_img}}" alt="Sample Image"> </center>
           <center> <p> {{$a->product_name}} </p> </center>
+          <center> <p> {{$a->product_price}} -.baht </p> </center>
 
         <!-- </a> -->
       </div>

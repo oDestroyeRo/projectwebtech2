@@ -198,19 +198,19 @@ class DatabaseSeeder extends Seeder
         App\Order::create([
           'id' => '2525',
           'order_id' => '1',
-          'total_price' => '50'
+          'total_price' => '500'
         ]);
 
         App\Order::create([
           'id' => '2525',
           'order_id' => '2',
-          'total_price' => '50'
+          'total_price' => '300'
         ]);
 
         App\Order::create([
           'id' => '3434',
           'order_id' => '3',
-          'total_price' => '50'
+          'total_price' => '200'
         ]);
 
 
