@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
         App\User::create([
           'id' => '1234',
           'email' => 'admin@gmail.com',
-          'password' => bcrypt('1111'),
-          'firstname' => 'adad',
-          'lastname' => 'dada',
+          'password' => bcrypt('0000'),
+          'firstname' => 'admin',
+          'lastname' => 'admin',
           'tel' => '0899999999',
-          'birthday' => '01/01/2001',
+          'birthday' => '01/01/1994',
           'gender' => 'male',
           'address' => 'tiwanon',
           'role' => 'admin'
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
           'firstname' => 'pizza',
           'lastname' => 'duzz',
           'tel' => '0801231234',
-          'birthday' => '01/02/2003',
+          'birthday' => '01/02/1995',
           'gender' => 'female',
           'address' => 'tiwanon',
           'role' => 'customer'
@@ -42,25 +42,53 @@ class DatabaseSeeder extends Seeder
         App\User::create([
           'id' => '3434',
           'email' => 'mymy@gmail.com',
-          'password' => bcrypt('2222'),
+          'password' => bcrypt('0000'),
           'firstname' => 'mymy',
           'lastname' => 'ymym',
           'tel' => '0855555555',
-          'birthday' => '03/04/2005',
+          'birthday' => '03/04/1996',
           'gender' => 'female',
           'address' => 'phayathai',
+          'role' => 'customer'
+        ]);
+        App\User::create([
+          'id' => '1010',
+          'email' => 'aa@a.com',
+          'password' => bcrypt('0000'),
+          'firstname' => 'aa',
+          'lastname' => 'aaaa',
+          'tel' => '0800000000',
+          'birthday' => '03/05/1996',
+          'gender' => 'female',
+          'address' => 'Lardprao',
+          'role' => 'admin'
+        ]);
+        App\User::create([
+          'id' => '1003',
+          'email' => 'mimi@gmail.com',
+          'password' => bcrypt('0000'),
+          'firstname' => 'mimi',
+          'lastname' => 'imim',
+          'tel' => '0833333333',
+          'birthday' => '03/02/2005',
+          'gender' => 'male',
+          'address' => 'khaosan',
           'role' => 'customer'
         ]);
 
         // User Details
 
         App\UserDetail::create([
-          'id' => '3434',
-          'point' => '100'
+          'id' => '2525',
+          'point' => '300'
         ]);
         App\UserDetail::create([
-          'id' => '2525',
+          'id' => '3434',
           'point' => '600'
+        ]);
+        App\UserDetail::create([
+          'id' => '1003',
+          'point' => '100'
         ]);
 
 
@@ -198,44 +226,87 @@ class DatabaseSeeder extends Seeder
         App\Order::create([
           'id' => '2525',
           'order_id' => '1',
-          'total_price' => '500'
+          'total_price' => '165'
         ]);
-
         App\Order::create([
           'id' => '2525',
           'order_id' => '2',
-          'total_price' => '300'
+          'total_price' => '115'
         ]);
-
         App\Order::create([
           'id' => '3434',
           'order_id' => '3',
-          'total_price' => '200'
+          'total_price' => '220'
+        ]);
+        App\Order::create([
+          'id' => '1003',
+          'order_id' => '4',
+          'total_price' => '195'
+        ]);
+        App\Order::create([
+          'id' => '1003',
+          'order_id' => '5',
+          'total_price' => '120'
         ]);
 
 
         // Order_datails
         App\OrderDetail::create([
           'order_id' => '1',
-          'product_id' => '0001',
-          'price' => '500',
+          'product_id' => '1',
+          'price' => '75',
           'size' => 'm',
+          'type' => 'hot'
+        ]);
+        App\OrderDetail::create([
+          'order_id' => '1',
+          'product_id' => '3',
+          'price' => '90',
+          'size' => 's',
           'type' => 'hot'
         ]);
 
         App\OrderDetail::create([
           'order_id' => '2',
-          'product_id' => '0002',
-          'price' => '300',
+          'product_id' => '2',
+          'price' => '115',
           'size' => 'l',
           'type' => 'ice'
         ]);
 
         App\OrderDetail::create([
           'order_id' => '3',
-          'product_id' => '0003',
-          'price' => '800',
+          'product_id' => '3',
+          'price' => '105',
+          'size' => 'm',
+          'type' => 'freppe'
+        ]);
+        App\OrderDetail::create([
+          'order_id' => '3',
+          'product_id' => '5',
+          'price' => '115',
           'size' => 's',
+          'type' => 'freppe'
+        ]);
+        App\OrderDetail::create([
+          'order_id' => '4',
+          'product_id' => '5',
+          'price' => '115',
+          'size' => 's',
+          'type' => 'freppe'
+        ]);
+        App\OrderDetail::create([
+          'order_id' => '4',
+          'product_id' => '4',
+          'price' => '80',
+          'size' => 's',
+          'type' => 'hot'
+        ]);
+        App\OrderDetail::create([
+          'order_id' => '5',
+          'product_id' => '9',
+          'price' => '120',
+          'size' => 'm',
           'type' => 'freppe'
         ]);
 
@@ -247,11 +318,19 @@ class DatabaseSeeder extends Seeder
 
         App\OrderDate::create([
           'order_id' => '2',
-          'date' => '2017-05-09'
+          'date' => '2017-05-08'
         ]);
 
         App\OrderDate::create([
           'order_id' => '3',
+          'date' => '2017-05-08'
+        ]);
+        App\OrderDate::create([
+          'order_id' => '4',
+          'date' => '2017-05-08'
+        ]);
+        App\OrderDate::create([
+          'order_id' => '5',
           'date' => '2017-05-09'
         ]);
 

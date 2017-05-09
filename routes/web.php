@@ -138,6 +138,8 @@ Route::get('/admin/promotion/delete/{id}','PromotionController@delete');
 Route::get('/admin/order','OrderController@getAllRecord');
 Route::get('/admin/order/{id}','OrderController@findByID');
 
+Route::get('pdf', 'PointController@toPdF');
+
 
 //Promotion
 // Route::get('/admin/promotion', 'PromotionController@allRecord');
