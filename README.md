@@ -10,8 +10,8 @@
 	MAIL_DRIVER=smtp
 	MAIL_HOST=smtp.gmail.com
 	MAIL_PORT=587
-	MAIL_USERNAME=odestroyero@hotmail.com
-	MAIL_PASSWORD=svylgjdfjbcetkbl
+	MAIL_USERNAME=odestroyyero@gmail.com
+	MAIL_PASSWORD=vqnbjmznmmjvanva
 	MAIL_ENCRYPTION=tls	
 5.        เข้าไปที่ไฟล์ php.ini โดยเปิด laragon ขึ้นมา -> menu->PHP->php.ini หา  extension=php_fileinfo.dll แล้วเอา ; ข้างหน้าออกแล้ว save
 6.	สร้าง database ตามชื่อที่ใส่
