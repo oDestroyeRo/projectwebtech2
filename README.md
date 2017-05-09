@@ -28,3 +28,6 @@
 5710451444 นางสาว วรินทร ประสารกก - ออกแบบดาต้าเบส, ทำไฟล์ migration, ทำไฟล์ Databaseseeder,ออกแบบpromotion and voucher และช่วยทำหน้า voucher 
 5710450201 นายณัฐปคัลภ์ วงศ์ชำนาญ - ทำระบบ Login,สมัครสมาชิก,resetpassword,permisssion ของแต่ละหน้า,ทำ smtp mailserver,หน้าหน้า product voucher users ในส่วนของ admin,ทำส่วนที่ login ครั้งแรกจะต้องเปลี่ยนรหัสผ่าน
 5610450993 นายปัณณวัชร์ กัลยาวุณิพัฒน์ - ทำหน้า report promotion order ของ admin
+
+
+facebook ในการติดต่อ :  www.facebook.com/oDestroyeRo Natpakan Wongchmanan
